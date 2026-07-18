@@ -1,0 +1,7 @@
+# Cross-session handoff context — machine-local, never published
+HANDOFF.md
+.agentic-board/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
