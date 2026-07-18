@@ -1,0 +1,18 @@
+name: sanitize
+
+# Sanitization guard: fails the build if any client identifier, live endpoint,
+# or leftover sanitize marker reaches the public tree. See SANITIZATION.md.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sanitization guard
+        run: bash scripts/sanitize-check.sh
