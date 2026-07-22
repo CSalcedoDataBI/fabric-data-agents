@@ -1,0 +1,26 @@
+# Contoso Retail — reference dataset for fabric-data-agents (issue #4)
+# Lean, deterministic, reproducible. Regenerate with:
+#   cug generate -c contoso-retail-ref-es.toml -o ./contoso-retail
+[general]
+orders_count = 100_000
+start_date   = "2023-01-01"   # 2-year window, parallels the vendor-spend example (2023-01..2024-12)
+end_date     = "2024-12-31"
+language     = "es"
+country      = "ES"
+seed         = 42             # deterministic: same config = same data
+chunk_days   = 30
+
+[output]
+format   = "parquet"
+path     = "./output/contoso-retail-ref/"
+compress = true
+prefix   = "contoso"
+
+[customers]
+pool_size  = 12_000           # lean pool — a teaching dataset, not a scale test
+active_pct = 0.35
+online_pct_start = 0.05
+online_pct_end   = 0.45
+
+[categories]
+enabled = ["electronics", "home", "gaming", "media"]
