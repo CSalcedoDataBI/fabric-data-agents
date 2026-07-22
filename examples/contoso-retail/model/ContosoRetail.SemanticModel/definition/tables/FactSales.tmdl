@@ -1,141 +1,91 @@
 table FactSales
 	lineageTag: 4224e16b-1b5f-5ba3-8637-0227ba7cad3f
 
-	measure 'Total Sales' = SUMX(FactSales, FactSales[Quantity] * FactSales[NetPrice])
-		formatString: \$#,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000001-0000-0000-0000-000000000001
-
-	measure 'Total Quantity' = SUM(FactSales[Quantity])
-		formatString: #,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000002-0000-0000-0000-000000000002
-
-	measure Orders = DISTINCTCOUNT(FactSales[OrderKey])
-		formatString: #,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000003-0000-0000-0000-000000000003
-
-	measure 'Distinct Customers' = DISTINCTCOUNT(FactSales[CustomerKey])
-		formatString: #,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000004-0000-0000-0000-000000000004
-
-	measure 'Total Cost' = SUMX(FactSales, FactSales[Quantity] * FactSales[UnitCost])
-		formatString: \$#,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000005-0000-0000-0000-000000000005
-
-	measure Margin = [Total Sales] - [Total Cost]
-		formatString: \$#,0
-		displayFolder: 1 Volume (additive)
-		lineageTag: a1000006-0000-0000-0000-000000000006
-
-	measure 'Margin %' = DIVIDE([Margin], [Total Sales])
-		formatString: 0.0%
-		displayFolder: 2 Ratios (non-additive)
-		lineageTag: a1000007-0000-0000-0000-000000000007
-
-	measure 'Average Selling Price' = DIVIDE([Total Sales], [Total Quantity])
-		formatString: \$#,0.00
-		displayFolder: 2 Ratios (non-additive)
-		lineageTag: a1000008-0000-0000-0000-000000000008
-
-	measure 'Sales per Customer' = DIVIDE([Total Sales], [Distinct Customers])
-		formatString: \$#,0
-		displayFolder: 2 Ratios (non-additive)
-		lineageTag: a1000009-0000-0000-0000-000000000009
-
-	measure '% of Total Sales' = DIVIDE([Total Sales], CALCULATE([Total Sales], REMOVEFILTERS()))
-		formatString: 0.0%
-		displayFolder: 2 Ratios (non-additive)
-		lineageTag: a1000010-0000-0000-0000-000000000010
-
 	column OrderKey
 		dataType: int64
-		lineageTag: 0afd7ab4-aa71-5ddc-afd7-197bcc6f514b
 		summarizeBy: none
 		sourceColumn: OrderKey
+		lineageTag: 0afd7ab4-aa71-5ddc-afd7-197bcc6f514b
 
 	column LineNumber
 		dataType: int64
-		lineageTag: 172f8fa7-30c6-513f-90f8-5980588cd1c9
 		summarizeBy: none
 		sourceColumn: LineNumber
+		lineageTag: 172f8fa7-30c6-513f-90f8-5980588cd1c9
 
 	column OrderDate
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: d9db84fe-a63e-596d-b723-6aa280ef8213
 		summarizeBy: none
 		sourceColumn: OrderDate
+		lineageTag: d9db84fe-a63e-596d-b723-6aa280ef8213
 
 	column DeliveryDate
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 0097fc86-8642-57ff-a969-af069128c012
 		summarizeBy: none
 		sourceColumn: DeliveryDate
+		lineageTag: 0097fc86-8642-57ff-a969-af069128c012
 
 	column CustomerKey
 		dataType: int64
-		lineageTag: 804eec7a-421f-57b3-afe3-2d022ba53452
 		summarizeBy: none
 		sourceColumn: CustomerKey
+		lineageTag: 804eec7a-421f-57b3-afe3-2d022ba53452
 
 	column StoreKey
 		dataType: int64
-		lineageTag: d539fcbb-d1e7-5490-879b-acc1e92fa4dd
 		summarizeBy: none
 		sourceColumn: StoreKey
+		lineageTag: d539fcbb-d1e7-5490-879b-acc1e92fa4dd
 
 	column ProductKey
 		dataType: int64
-		lineageTag: e1713dc9-5c8e-53ea-bcdb-251ac2c13840
 		summarizeBy: none
 		sourceColumn: ProductKey
+		lineageTag: e1713dc9-5c8e-53ea-bcdb-251ac2c13840
 
 	column Channel
 		dataType: string
-		lineageTag: 36ac4ebe-fea7-5f10-b608-31cd4b5db498
 		summarizeBy: none
 		sourceColumn: Channel
+		lineageTag: 36ac4ebe-fea7-5f10-b608-31cd4b5db498
 
 	column Quantity
 		dataType: int64
-		lineageTag: f52fd07f-6b26-5188-88fc-828c0a824267
 		summarizeBy: none
 		sourceColumn: Quantity
+		lineageTag: f52fd07f-6b26-5188-88fc-828c0a824267
 
 	column UnitPrice
 		dataType: double
-		lineageTag: 07543793-9893-58a1-aac6-7945a1cf3078
 		summarizeBy: none
 		sourceColumn: UnitPrice
+		lineageTag: 07543793-9893-58a1-aac6-7945a1cf3078
 
 	column NetPrice
 		dataType: double
-		lineageTag: d941a76e-6197-53bb-967d-4ca88bfe8a25
 		summarizeBy: none
 		sourceColumn: NetPrice
+		lineageTag: d941a76e-6197-53bb-967d-4ca88bfe8a25
 
 	column UnitCost
 		dataType: double
-		lineageTag: a34cd02b-4c2c-55e4-9481-93d1c605b04d
 		summarizeBy: none
 		sourceColumn: UnitCost
+		lineageTag: a34cd02b-4c2c-55e4-9481-93d1c605b04d
 
 	column CurrencyCode
 		dataType: string
-		lineageTag: 4a51408c-127f-51fc-8964-8d72aafe8c45
 		summarizeBy: none
 		sourceColumn: CurrencyCode
+		lineageTag: 4a51408c-127f-51fc-8964-8d72aafe8c45
 
 	column ExchangeRate
 		dataType: double
-		lineageTag: 88b524fe-4ddb-5952-b03f-7295c6f8e780
 		summarizeBy: none
 		sourceColumn: ExchangeRate
+		lineageTag: 88b524fe-4ddb-5952-b03f-7295c6f8e780
 
 	partition FactSales = m
 		mode: import
