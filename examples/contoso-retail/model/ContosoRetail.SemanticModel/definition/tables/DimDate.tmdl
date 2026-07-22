@@ -14,7 +14,12 @@ table DimDate
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 8376b581-3d72-58ca-9ce5-f4c06731ae0c
+		summarizeBy: none
 		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
 
 	/// Calendar year.
 	column Year
@@ -139,3 +144,4 @@ table DimDate
 					Source = Parquet.Document(Web.Contents(DataBaseUrl, [RelativePath="DimDate.parquet"]))
 				in
 					Source
+

@@ -34,3 +34,4 @@ table DimCurrencyExchange
 					Source = Parquet.Document(Web.Contents(DataBaseUrl, [RelativePath="DimCurrencyExchange.parquet"]))
 				in
 					Source
+

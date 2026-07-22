@@ -159,3 +159,4 @@ table DimCustomer
 					Typed = Table.TransformColumnTypes(Source, {{"EndDT", type text}})
 				in
 					Typed
+

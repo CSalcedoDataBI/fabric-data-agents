@@ -11,6 +11,8 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["DimCurrency","DimCurrencyExchange","DimCustomer","DimDate","DimProduct","DimStore","FactSales","DataBaseUrl"]
+
 ref table DimCurrency
 ref table DimCurrencyExchange
 ref table DimCustomer

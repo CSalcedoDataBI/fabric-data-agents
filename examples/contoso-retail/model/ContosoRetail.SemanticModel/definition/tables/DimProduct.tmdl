@@ -99,3 +99,4 @@ table DimProduct
 					Source = Parquet.Document(Web.Contents(DataBaseUrl, [RelativePath="DimProduct.parquet"]))
 				in
 					Source
+

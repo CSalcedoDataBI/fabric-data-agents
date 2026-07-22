@@ -2,13 +2,6 @@
 table _Measures
 	lineageTag: f1000000-0000-0000-0000-000000000001
 
-	column Placeholder
-		isHidden: true
-		dataType: string
-		summarizeBy: none
-		sourceColumn: [Placeholder]
-		lineageTag: f1000000-0000-0000-0000-0000000000c1
-
 	/// Net sales revenue = Σ(Quantity × NetPrice) over order lines. Additive; the primary revenue measure. Report alongside Total Quantity and Orders.
 	measure 'Total Sales' = SUMX(FactSales, FactSales[Quantity] * FactSales[NetPrice])
 		formatString: \$#,0
@@ -99,6 +92,14 @@ table _Measures
 		displayFolder: 05 Time Intelligence
 		lineageTag: b1000000-0000-0000-0000-00000000000f
 
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: f1000000-0000-0000-0000-0000000000c1
+		summarizeBy: none
+		sourceColumn: [Placeholder]
+
 	partition _Measures = calculated
 		mode: import
 		source = ROW("Placeholder", "")
+

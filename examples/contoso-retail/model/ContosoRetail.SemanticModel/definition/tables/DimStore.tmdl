@@ -87,3 +87,4 @@ table DimStore
 					Typed = Table.TransformColumnTypes(Source, {{"CloseDate", type text}})
 				in
 					Typed
+

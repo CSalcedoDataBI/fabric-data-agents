@@ -40,3 +40,8 @@ table DimCurrency
 					Source = Parquet.Document(Web.Contents(DataBaseUrl, [RelativePath="DimCurrency.parquet"]))
 				in
 					Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
