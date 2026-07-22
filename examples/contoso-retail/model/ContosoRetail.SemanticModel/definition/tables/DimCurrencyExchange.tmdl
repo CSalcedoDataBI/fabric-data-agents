@@ -26,7 +26,7 @@ table DimCurrencyExchange
 		mode: import
 		source =
 				let
-					Source = Parquet.Document(File.Contents(DataFolder & "DimCurrencyExchange.parquet"))
+					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
+					Data = Source{[Schema="dbo", Item="DimCurrencyExchange"]}[Data]
 				in
-					Source
-
+					Data

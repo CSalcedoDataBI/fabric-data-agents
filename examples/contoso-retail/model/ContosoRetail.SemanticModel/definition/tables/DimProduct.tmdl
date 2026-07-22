@@ -81,7 +81,7 @@ table DimProduct
 		mode: import
 		source =
 				let
-					Source = Parquet.Document(File.Contents(DataFolder & "DimProduct.parquet"))
+					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
+					Data = Source{[Schema="dbo", Item="DimProduct"]}[Data]
 				in
-					Source
-
+					Data

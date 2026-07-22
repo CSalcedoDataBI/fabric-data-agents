@@ -130,7 +130,7 @@ table DimCustomer
 		mode: import
 		source =
 				let
-					Source = Parquet.Document(File.Contents(DataFolder & "DimCustomer.parquet"))
+					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
+					Data = Source{[Schema="dbo", Item="DimCustomer"]}[Data]
 				in
-					Source
-
+					Data

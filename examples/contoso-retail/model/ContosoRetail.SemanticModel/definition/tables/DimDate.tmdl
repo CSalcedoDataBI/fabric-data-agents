@@ -115,7 +115,7 @@ table DimDate
 		mode: import
 		source =
 				let
-					Source = Parquet.Document(File.Contents(DataFolder & "DimDate.parquet"))
+					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
+					Data = Source{[Schema="dbo", Item="DimDate"]}[Data]
 				in
-					Source
-
+					Data

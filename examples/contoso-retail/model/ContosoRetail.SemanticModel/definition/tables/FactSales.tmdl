@@ -141,8 +141,8 @@ table FactSales
 		mode: import
 		source =
 				let
-					Source = Parquet.Document(File.Contents(DataFolder & "FactSales.parquet")),
-					Typed = Table.TransformColumnTypes(Source, {{"OrderDate", type date}, {"DeliveryDate", type date}})
+					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
+					Data = Source{[Schema="dbo", Item="FactSales"]}[Data],
+					Typed = Table.TransformColumnTypes(Data, {{"OrderDate", type date}, {"DeliveryDate", type date}}, "en-US")
 				in
 					Typed
-
