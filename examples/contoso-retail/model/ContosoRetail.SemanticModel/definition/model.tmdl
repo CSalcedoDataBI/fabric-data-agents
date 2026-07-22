@@ -10,3 +10,12 @@ model Model
 annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimCurrency
+ref table DimCurrencyExchange
+ref table DimCustomer
+ref table DimDate
+ref table DimProduct
+ref table DimStore
+ref table FactSales
+

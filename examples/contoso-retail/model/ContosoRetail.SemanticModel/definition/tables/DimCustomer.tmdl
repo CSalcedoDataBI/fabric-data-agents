@@ -3,128 +3,128 @@ table DimCustomer
 
 	column CustomerKey
 		dataType: int64
+		lineageTag: 5f5aff48-26c7-5f08-a365-4f277b81c32e
 		summarizeBy: none
 		sourceColumn: CustomerKey
-		lineageTag: 5f5aff48-26c7-5f08-a365-4f277b81c32e
 
 	column GeoAreaKey
 		dataType: int64
+		lineageTag: 75d74068-6064-59ff-b243-04aa13d051c9
 		summarizeBy: none
 		sourceColumn: GeoAreaKey
-		lineageTag: 75d74068-6064-59ff-b243-04aa13d051c9
 
 	column StartDT
 		dataType: string
-		sourceColumn: StartDT
 		lineageTag: 29107021-9f8e-5fca-8a3a-c932b5ed333d
+		sourceColumn: StartDT
 
 	column EndDT
 		dataType: string
-		sourceColumn: EndDT
 		lineageTag: 7dc70700-0282-5e1a-8aaf-f8ed3eaadac7
+		sourceColumn: EndDT
 
 	column Continent
 		dataType: string
-		sourceColumn: Continent
 		lineageTag: 2c3f4b52-f4b1-5a13-82d8-aeb4c30584bc
+		sourceColumn: Continent
 
 	column Gender
 		dataType: string
-		sourceColumn: Gender
 		lineageTag: 973f155a-545f-5580-baa7-ffdc669e9aa7
+		sourceColumn: Gender
 
 	column Title
 		dataType: string
-		sourceColumn: Title
 		lineageTag: bfebf225-1a1b-57cb-8347-ec0f2709ac91
+		sourceColumn: Title
 
 	column GivenName
 		dataType: string
-		sourceColumn: GivenName
 		lineageTag: f6cc37e1-ff3d-5d99-bdb1-a6a4f6a96cb6
+		sourceColumn: GivenName
 
 	column MiddleInitial
 		dataType: string
-		sourceColumn: MiddleInitial
 		lineageTag: 54d55906-a70f-5bda-9855-b8a96fa47156
+		sourceColumn: MiddleInitial
 
 	column Surname
 		dataType: string
-		sourceColumn: Surname
 		lineageTag: d466764b-aed6-5fcd-b451-38eb753a3d0b
+		sourceColumn: Surname
 
 	column StreetAddress
 		dataType: string
-		sourceColumn: StreetAddress
 		lineageTag: 6b4649dd-c051-534e-ba4f-aea83ab263bc
+		sourceColumn: StreetAddress
 
 	column City
 		dataType: string
-		sourceColumn: City
 		lineageTag: 235dcda0-b26f-5232-bab0-b0ee694709af
+		sourceColumn: City
 
 	column State
 		dataType: string
-		sourceColumn: State
 		lineageTag: f2d87d1c-c816-5db6-b403-6881271b4440
+		sourceColumn: State
 
 	column StateFull
 		dataType: string
-		sourceColumn: StateFull
 		lineageTag: 0fc1aa16-6086-5c0e-827c-b3ef45719b6a
+		sourceColumn: StateFull
 
 	column ZipCode
 		dataType: string
-		sourceColumn: ZipCode
 		lineageTag: e8231d9b-66ae-512e-956f-bcddc1c21f76
+		sourceColumn: ZipCode
 
 	column Country
 		dataType: string
-		sourceColumn: Country
 		lineageTag: 23ecedfe-7d01-525c-87b3-222c20641f1b
+		sourceColumn: Country
 
 	column CountryFull
 		dataType: string
-		sourceColumn: CountryFull
 		lineageTag: e60c58a5-9cff-5f23-b0cd-d2b15407ba12
+		sourceColumn: CountryFull
 
 	column Birthday
 		dataType: string
-		sourceColumn: Birthday
 		lineageTag: 7c384b76-f0a5-5151-94cc-a260e5773b0b
+		sourceColumn: Birthday
 
 	column Age
 		dataType: int64
+		lineageTag: bfae2b65-419f-56ca-a09d-4c52c164a742
 		summarizeBy: none
 		sourceColumn: Age
-		lineageTag: bfae2b65-419f-56ca-a09d-4c52c164a742
 
 	column Occupation
 		dataType: string
-		sourceColumn: Occupation
 		lineageTag: 90c1c96d-acf8-53df-b8a0-e5717a582e93
+		sourceColumn: Occupation
 
 	column Company
 		dataType: string
-		sourceColumn: Company
 		lineageTag: e4b13a1f-c6d2-59ac-b4cc-cdabd6fe09e6
+		sourceColumn: Company
 
 	column Vehicle
 		dataType: string
-		sourceColumn: Vehicle
 		lineageTag: fbef063b-09f5-558c-8044-8a0becc7f465
+		sourceColumn: Vehicle
 
 	column Latitude
 		dataType: double
+		lineageTag: 65cceaa1-a514-5485-9b77-f4073f44fef0
 		summarizeBy: none
 		sourceColumn: Latitude
-		lineageTag: 65cceaa1-a514-5485-9b77-f4073f44fef0
 
 	column Longitude
 		dataType: double
+		lineageTag: 08402f85-a1e1-58ab-9226-6afe2e7cc521
 		summarizeBy: none
 		sourceColumn: Longitude
-		lineageTag: 08402f85-a1e1-58ab-9226-6afe2e7cc521
 
 	partition DimCustomer = m
 		mode: import
@@ -133,3 +133,4 @@ table DimCustomer
 					Source = Parquet.Document(File.Contents(DataFolder & "DimCustomer.parquet"))
 				in
 					Source
+

@@ -3,113 +3,113 @@ table DimDate
 
 	column DateKey
 		dataType: int64
+		lineageTag: dddd20d8-b103-563f-b08e-1271b9f1e46e
 		summarizeBy: none
 		sourceColumn: DateKey
-		lineageTag: dddd20d8-b103-563f-b08e-1271b9f1e46e
 
 	column Date
 		dataType: dateTime
-		sourceColumn: Date
-		lineageTag: 8376b581-3d72-58ca-9ce5-f4c06731ae0c
 		formatString: yyyy-mm-dd
+		lineageTag: 8376b581-3d72-58ca-9ce5-f4c06731ae0c
+		sourceColumn: Date
 
 	column Year
 		dataType: int64
+		lineageTag: e4a6ba08-243a-53bb-8d75-c28e5c8e5dc1
 		summarizeBy: none
 		sourceColumn: Year
-		lineageTag: e4a6ba08-243a-53bb-8d75-c28e5c8e5dc1
 
 	column Quarter
 		dataType: int64
+		lineageTag: e8c1f519-5730-564c-9c6a-d553b7a0792f
 		summarizeBy: none
 		sourceColumn: Quarter
-		lineageTag: e8c1f519-5730-564c-9c6a-d553b7a0792f
 
 	column Month
 		dataType: int64
+		lineageTag: 5cf25456-f7c3-5d95-9d85-bc7b519292f1
 		summarizeBy: none
 		sourceColumn: Month
-		lineageTag: 5cf25456-f7c3-5d95-9d85-bc7b519292f1
 
 	column MonthName
 		dataType: string
-		sourceColumn: MonthName
 		lineageTag: 9ef226bb-74cc-5e3c-93da-cf819eea1189
+		sourceColumn: MonthName
 
 	column MonthNameShort
 		dataType: string
-		sourceColumn: MonthNameShort
 		lineageTag: 6a8d6856-ef27-5e3c-8d7d-99c13d0c6e52
+		sourceColumn: MonthNameShort
 
 	column Week
 		dataType: int64
+		lineageTag: 1ad6c6bb-8989-572a-98ce-cdce2f1fc5b4
 		summarizeBy: none
 		sourceColumn: Week
-		lineageTag: 1ad6c6bb-8989-572a-98ce-cdce2f1fc5b4
 
 	column DayOfYear
 		dataType: int64
+		lineageTag: c785108c-ee17-5759-a8ec-5ceb72e63af3
 		summarizeBy: none
 		sourceColumn: DayOfYear
-		lineageTag: c785108c-ee17-5759-a8ec-5ceb72e63af3
 
 	column DayOfMonth
 		dataType: int64
+		lineageTag: 136b8acf-9ed9-5d81-bf3e-5296d6a54696
 		summarizeBy: none
 		sourceColumn: DayOfMonth
-		lineageTag: 136b8acf-9ed9-5d81-bf3e-5296d6a54696
 
 	column DayOfWeek
 		dataType: int64
+		lineageTag: ceb70daa-5a7d-5005-831a-9b38853fa8e6
 		summarizeBy: none
 		sourceColumn: DayOfWeek
-		lineageTag: ceb70daa-5a7d-5005-831a-9b38853fa8e6
 
 	column DayName
 		dataType: string
-		sourceColumn: DayName
 		lineageTag: 29ef3d46-51c0-525c-8387-2338308e84ed
+		sourceColumn: DayName
 
 	column DayNameShort
 		dataType: string
-		sourceColumn: DayNameShort
 		lineageTag: 109b16c7-563b-5409-895f-6b9f5fb4d1a2
+		sourceColumn: DayNameShort
 
 	column IsWeekend
 		dataType: boolean
-		sourceColumn: IsWeekend
 		lineageTag: 92e7297f-391e-536a-b591-b94520b2d4ab
+		sourceColumn: IsWeekend
 
 	column IsHoliday
 		dataType: boolean
-		sourceColumn: IsHoliday
 		lineageTag: ce0a626f-6669-54d5-bf88-9ed13fb5dcc2
+		sourceColumn: IsHoliday
 
 	column HolidayName
 		dataType: string
-		sourceColumn: HolidayName
 		lineageTag: c731411a-8bc2-572c-a666-adb186c132d9
+		sourceColumn: HolidayName
 
 	column IsWorkingDay
 		dataType: boolean
-		sourceColumn: IsWorkingDay
 		lineageTag: 8f7c3070-636b-590b-809c-31b8969464bc
+		sourceColumn: IsWorkingDay
 
 	column WorkingDayOfMonth
 		dataType: int64
+		lineageTag: b7d46a74-2c8f-5aef-898a-2069de7d10cb
 		summarizeBy: none
 		sourceColumn: WorkingDayOfMonth
-		lineageTag: b7d46a74-2c8f-5aef-898a-2069de7d10cb
 
 	column YearMonth
 		dataType: string
-		sourceColumn: YearMonth
 		lineageTag: 19945a80-ad1f-5a05-a4df-32ad2b6ee3d5
+		sourceColumn: YearMonth
 
 	column YearQuarter
 		dataType: string
-		sourceColumn: YearQuarter
 		lineageTag: 6593da63-46bc-5a0d-9e49-2bf6278fb377
+		sourceColumn: YearQuarter
 
 	partition DimDate = m
 		mode: import
@@ -118,3 +118,4 @@ table DimDate
 					Source = Parquet.Document(File.Contents(DataFolder & "DimDate.parquet"))
 				in
 					Source
+

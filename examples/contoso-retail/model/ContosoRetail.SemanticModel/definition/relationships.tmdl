@@ -17,3 +17,4 @@ relationship c0000004-0000-0000-0000-000000000004
 relationship c0000005-0000-0000-0000-000000000005
 	fromColumn: FactSales.CurrencyCode
 	toColumn: DimCurrency.CurrencyCode
+
