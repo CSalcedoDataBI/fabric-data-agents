@@ -48,12 +48,17 @@ cug generate -c config/contoso-retail-ref-es.toml -o ./output
 
 `FactSales` joins to the dimensions on their `*Key` columns; `DimDate` on `OrderDate`/`DeliveryDate`.
 
-## What comes next (this is issue [#4](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/4))
+## The model, and what comes next
 
-This folder holds the **dataset** only. The teaching semantic model (additive vs. non-additive
-measures, companion measures, a per-head ratio with a named denominator, leadership dimensions) and
-the Data Agent config (`agent.config.json`, `data-sources.yaml`, `instructions.md`,
-`example-queries.json`) are built on top of it in issues #5 and #6 — mirroring the structure of
+This folder holds the **dataset** (issue [#4](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/4)).
+The teaching **semantic model is built** on top of it in [`model/`](model/README.md) — a retail star
+with a categorised `_Measures` container (issue [#5](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/5)).
+**Open [`model/ContosoRetail.pbix`](model/) to see it with data embedded** (no setup); this is the
+model we use to **evaluate** everything the reference says about a Fabric Data Agent.
+
+Next, the Data Agent config (`agent.config.json`, `data-sources.yaml`, `instructions.md`,
+`example-queries.json`) is authored over this model in issue
+[#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6) — mirroring the structure of
 [`../contoso-vendor-spend/`](../contoso-vendor-spend/) and the anatomy in
 [`docs/anatomy/`](../../docs/anatomy/00-overview.md).
 

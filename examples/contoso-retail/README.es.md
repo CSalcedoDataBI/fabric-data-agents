@@ -48,12 +48,17 @@ cug generate -c config/contoso-retail-ref-es.toml -o ./output
 
 `FactSales` une con las dimensiones por sus columnas `*Key`; `DimDate` por `OrderDate`/`DeliveryDate`.
 
-## Qué sigue (esto es el issue [#4](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/4))
+## El modelo, y qué sigue
 
-Esta carpeta contiene solo el **dataset**. El modelo semántico de enseñanza (medidas aditivas vs. no
-aditivas, medidas compañeras, un ratio per-cápita con denominador nombrado, dimensiones de liderazgo) y
-la config del Data Agent (`agent.config.json`, `data-sources.yaml`, `instructions.md`,
-`example-queries.json`) se construyen encima en los issues #5 y #6 — reflejando la estructura de
+Esta carpeta contiene el **dataset** (issue [#4](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/4)).
+El modelo semántico de enseñanza **ya está construido** encima, en [`model/`](model/README.es.md) — una
+estrella retail con un contenedor `_Measures` categórico (issue [#5](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/5)).
+**Abre [`model/ContosoRetail.pbix`](model/) para verlo con los datos embebidos** (sin configurar nada);
+este es el modelo que usamos para **evaluar** todo lo que la referencia afirma sobre un Fabric Data Agent.
+
+Luego, la config del Data Agent (`agent.config.json`, `data-sources.yaml`, `instructions.md`,
+`example-queries.json`) se escribe sobre este modelo en el issue
+[#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6) — reflejando la estructura de
 [`../contoso-vendor-spend/`](../contoso-vendor-spend/README.es.md) y la anatomía en
 [`docs/anatomy/`](../../docs/anatomy/00-overview.es.md).
 
