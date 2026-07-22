@@ -18,5 +18,5 @@ ref table DimDate
 ref table DimProduct
 ref table DimStore
 ref table FactSales
-ref table Measures
+ref table _Measures
 

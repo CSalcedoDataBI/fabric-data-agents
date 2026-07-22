@@ -1,4 +1,4 @@
-table Measures
+table _Measures
 	lineageTag: f1000000-0000-0000-0000-000000000001
 
 	column Placeholder
@@ -83,6 +83,6 @@ table Measures
 		displayFolder: 05 Time Intelligence
 		lineageTag: b1000000-0000-0000-0000-00000000000f
 
-	partition Measures = calculated
+	partition _Measures = calculated
 		mode: import
 		source = ROW("Placeholder", "")
