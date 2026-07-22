@@ -28,9 +28,10 @@ pasas a la gente.**
 La definición legible y versionada (**TMDL** en texto plano bajo
 `ContosoRetail.SemanticModel/definition/`). Úsala para leer el código, contribuir, o **hacer / rehacer
 Prep for AI** — ese trabajo se autora aquí, sobre el PBIP conectado, y luego se hornea en el `.pbix` de
-arriba (que se regenera desde esta fuente). Los datos se transmiten desde los Parquet commiteados en
-[`../data`](../data) por **GitHub raw** vía el parámetro `DataBaseUrl`, así refresca para cualquiera en
-cuanto el repo sea público (el primer refresh pide una vez acceso anónimo). Para trabajar 100% offline,
+arriba (que se regenera desde esta fuente). Los datos se transmiten desde el **repo público
+[SampleDataSets](https://github.com/CSalcedoDataBI/SampleDataSets)** (carpeta `contoso-retail/`) por
+**GitHub raw** vía el parámetro `DataBaseUrl`, así **refresca para cualquiera ya mismo** — la data está
+hospedada en público, por eso este repo de referencia puede seguir privado. Para trabajar 100% offline,
 apunta `DataBaseUrl` a una carpeta local con los `.parquet`.
 
 > **No publicamos el PBIP como "lo que se ejecuta".** El PBIP es la *fuente*; conectar datos y

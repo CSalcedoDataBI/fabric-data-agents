@@ -26,10 +26,11 @@ Fabric Data Agent is evaluated against. **This is the file to hand people.**
 The human-readable, version-controlled definition (plain-text **TMDL** under
 `ContosoRetail.SemanticModel/definition/`). Use it to read the code, contribute, or **do / redo Prep
 for AI** — that work is authored here, on the connected PBIP, then baked into the `.pbix` above (which
-is regenerated from this source). Data streams from the committed Parquet in [`../data`](../data) over
-**GitHub raw** via the `DataBaseUrl` parameter, so it refreshes for anyone once this repo is public
-(the first refresh asks once for anonymous access). To work fully offline, point `DataBaseUrl` at a
-local folder holding the `.parquet` files.
+is regenerated from this source). Data streams from the **public
+[SampleDataSets](https://github.com/CSalcedoDataBI/SampleDataSets) repo** (folder `contoso-retail/`)
+over **GitHub raw** via the `DataBaseUrl` parameter, so it **refreshes for anyone right now** — the
+data is hosted publicly, so this reference repo can stay private. To work fully offline, point
+`DataBaseUrl` at a local folder holding the `.parquet` files.
 
 > **We don't publish the PBIP as the thing you "run".** The PBIP is the *source*; connecting data and
 > Prep-for-AI are builder steps. The artifact a user downloads and opens is the **`.pbix`**.
