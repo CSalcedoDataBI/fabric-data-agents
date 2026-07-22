@@ -70,7 +70,7 @@ table DimStore
 		mode: import
 		source =
 				let
-					Source = Sql.Database("localhost\SQLEXPRESS", "ContosoRetail"),
-					Data = Source{[Schema="dbo", Item="DimStore"]}[Data]
+					Source = Parquet.Document(Web.Contents(DataBaseUrl, [RelativePath="DimStore.parquet"])),
+					Typed = Table.TransformColumnTypes(Source, {{"CloseDate", type text}})
 				in
-					Data
+					Typed
