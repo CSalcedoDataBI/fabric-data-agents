@@ -9,19 +9,32 @@ modelo que usamos para evaluar todo lo que esta referencia afirma sobre un Fabri
 config del Data Agent (issue [#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6)) se
 apoya en él.
 
-## Dos formas de usarlo
+## Dos formas de usarlo — elige según quién seas
 
-### 1. Solo ábrelo — `ContosoRetail.pbix` (datos embebidos) ← empieza aquí
-Descárgalo y ábrelo en Power BI Desktop. Los datos están **embebidos dentro del archivo** (126,524
-líneas de venta): sin refresh, sin SQL Server, sin internet. Todo carga al instante. Este es el
-**modelo de evaluación** — ábrelo, explora el esquema estrella y ve las 15 medidas calculando.
+Un Power BI Project (PBIP) es el formato ideal para *construir* un modelo, pero una *descarga* incómoda
+para quien solo quiere mirar: implica reconectar datos, pasar diálogos de credenciales/privacidad y
+refrescar — fricción que hace que mucha gente abandone. Por eso publicamos ambos formatos y
+**priorizamos el que simplemente funciona**.
 
-### 2. La fuente — `ContosoRetail.pbip` (TMDL, refrescable)
-La definición legible. Tablas, relaciones y el contenedor de medidas son **TMDL** en texto plano bajo
-`ContosoRetail.SemanticModel/definition/`. Los datos se transmiten desde los Parquet commiteados en
-[`../data`](../data) por **GitHub raw** vía el parámetro `DataBaseUrl` — así **refresca para
-cualquiera en cuanto el repo sea público**, sin rutas locales. Para refrescar offline, apunta
-`DataBaseUrl` a una carpeta local con los `.parquet`.
+### Para casi todos — `ContosoRetail.pbix` (datos embebidos) ← empieza aquí
+Descarga, abre en Power BI Desktop, listo. Los datos están **horneados en el archivo** (126,524 líneas
+de venta): sin refresh, sin datos que bajar, sin reconectar, sin internet. Además lleva la
+**preparación para IA** del modelo (descripciones de campos, AI instructions, AI data schema), así que
+puedes abrir *Prep data for AI* y ver exactamente cómo está configurado para un Data Agent — sin
+configurar nada. Es el modelo contra el que se evalúa el Fabric Data Agent. **Este es el archivo que le
+pasas a la gente.**
+
+### Para constructores — `ContosoRetail.pbip` (fuente TMDL)
+La definición legible y versionada (**TMDL** en texto plano bajo
+`ContosoRetail.SemanticModel/definition/`). Úsala para leer el código, contribuir, o **hacer / rehacer
+Prep for AI** — ese trabajo se autora aquí, sobre el PBIP conectado, y luego se hornea en el `.pbix` de
+arriba (que se regenera desde esta fuente). Los datos se transmiten desde los Parquet commiteados en
+[`../data`](../data) por **GitHub raw** vía el parámetro `DataBaseUrl`, así refresca para cualquiera en
+cuanto el repo sea público (el primer refresh pide una vez acceso anónimo). Para trabajar 100% offline,
+apunta `DataBaseUrl` a una carpeta local con los `.parquet`.
+
+> **No publicamos el PBIP como "lo que se ejecuta".** El PBIP es la *fuente*; conectar datos y
+> Prep-for-AI son pasos de constructor. El artefacto que un usuario descarga y abre es el **`.pbix`**.
 
 ## El modelo
 

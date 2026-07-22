@@ -8,19 +8,31 @@ The teaching semantic model built on the [dataset](../data) next door. **This is
 evaluate everything this reference says about a Fabric Data Agent** — the Data Agent config
 (issue [#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6)) sits on top of it.
 
-## Two ways to use it
+## Two ways to use it — pick by who you are
 
-### 1. Just open it — `ContosoRetail.pbix` (data embedded) ← start here
-Download and open in Power BI Desktop. The data is **embedded inside the file** (126,524 sales lines):
-no refresh, no SQL Server, no internet. Everything loads instantly. This is the **evaluation model** —
-open it, explore the star schema, and see the 15 measures compute.
+A Power BI Project (PBIP) is the right format for *building* a model, but a rough *download* for
+someone who just wants to look: it means reconnecting data, clearing credential/privacy prompts, and
+refreshing — friction that makes many people quit. So we ship both formats and **lead with the one
+that just works**.
 
-### 2. The source — `ContosoRetail.pbip` (TMDL, refreshable)
-The human-readable definition. Tables, relationships and the measures container are plain-text
-**TMDL** under `ContosoRetail.SemanticModel/definition/`. Data streams from the committed Parquet in
-[`../data`](../data) over **GitHub raw** via the `DataBaseUrl` parameter — so it **refreshes for
-anyone once this repo is public**, with no local paths. To refresh offline, point `DataBaseUrl` at a
+### For almost everyone — `ContosoRetail.pbix` (data embedded) ← start here
+Download, open in Power BI Desktop, done. The data is **baked into the file** (126,524 sales lines):
+no refresh, no data to download, no reconnecting, no internet. It also carries the model's
+**AI-readiness** (field descriptions, AI instructions, AI data schema), so you can open *Prep data for
+AI* and see exactly how it's set up for a Data Agent — configuring nothing. This is the model the
+Fabric Data Agent is evaluated against. **This is the file to hand people.**
+
+### For builders — `ContosoRetail.pbip` (TMDL source)
+The human-readable, version-controlled definition (plain-text **TMDL** under
+`ContosoRetail.SemanticModel/definition/`). Use it to read the code, contribute, or **do / redo Prep
+for AI** — that work is authored here, on the connected PBIP, then baked into the `.pbix` above (which
+is regenerated from this source). Data streams from the committed Parquet in [`../data`](../data) over
+**GitHub raw** via the `DataBaseUrl` parameter, so it refreshes for anyone once this repo is public
+(the first refresh asks once for anonymous access). To work fully offline, point `DataBaseUrl` at a
 local folder holding the `.parquet` files.
+
+> **We don't publish the PBIP as the thing you "run".** The PBIP is the *source*; connecting data and
+> Prep-for-AI are builder steps. The artifact a user downloads and opens is the **`.pbix`**.
 
 ## The model
 
