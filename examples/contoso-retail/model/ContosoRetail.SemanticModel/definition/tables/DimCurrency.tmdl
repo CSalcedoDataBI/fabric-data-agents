@@ -1,0 +1,36 @@
+table DimCurrency
+	lineageTag: c7d4a9af-e676-585e-849d-f7479653fb72
+
+	column CurrencyKey
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+		lineageTag: 8208a4b3-06d0-553a-adaa-16f7c41878ac
+
+	column CurrencyCode
+		dataType: string
+		sourceColumn: CurrencyCode
+		lineageTag: 2bd436fc-566f-58b1-83ab-86919a90bf39
+
+	column CurrencyName
+		dataType: string
+		sourceColumn: CurrencyName
+		lineageTag: e69f2f62-b26d-51e6-91da-fa058b09f27a
+
+	column Symbol
+		dataType: string
+		sourceColumn: Symbol
+		lineageTag: f433ba70-5d8a-5a88-80b6-4774da12aac4
+
+	column Language
+		dataType: string
+		sourceColumn: Language
+		lineageTag: 31a5f03b-0a5e-5a3d-b2f9-100ebc8539f5
+
+	partition DimCurrency = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document(File.Contents(DataFolder & "DimCurrency.parquet"))
+				in
+					Source

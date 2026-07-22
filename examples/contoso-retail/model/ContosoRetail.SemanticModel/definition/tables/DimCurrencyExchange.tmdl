@@ -1,0 +1,31 @@
+table DimCurrencyExchange
+	lineageTag: 7a6bebb3-c97f-542a-b4a7-0777072b3648
+
+	column Date
+		dataType: string
+		sourceColumn: Date
+		lineageTag: a076c088-ab7d-516b-be6a-82339f141041
+
+	column FromCurrency
+		dataType: string
+		sourceColumn: FromCurrency
+		lineageTag: be913dc3-3fc3-5fe0-80df-d884ad6190a2
+
+	column ToCurrency
+		dataType: string
+		sourceColumn: ToCurrency
+		lineageTag: 5d8ad4ed-688d-55ca-8924-b17404ed03d4
+
+	column Exchange
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Exchange
+		lineageTag: 18c027c1-384f-5baf-92b8-ee22afcf24fd
+
+	partition DimCurrencyExchange = m
+		mode: import
+		source =
+				let
+					Source = Parquet.Document(File.Contents(DataFolder & "DimCurrencyExchange.parquet"))
+				in
+					Source

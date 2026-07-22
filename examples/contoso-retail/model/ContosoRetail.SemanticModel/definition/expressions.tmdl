@@ -1,0 +1,2 @@
+expression DataFolder = "E:/MIS-REPO/fabric-data-agents/examples/contoso-retail/data/"
+	lineageTag: b0000000-0000-0000-0000-0000000000d0
