@@ -20,10 +20,12 @@ cd "$ROOT"
 EXCLUDES=(--exclude-dir=.git --exclude="sanitize-check.sh" --exclude="SANITIZATION.md")
 
 fail=0
-report() { # <label> <pattern>
+report() { # <label> <pattern> [extra grep args...]
   local label="$1" pattern="$2" hits
-  # -I skip binary, -r recurse, -n line numbers, -E extended regex
-  if hits="$(grep -rInE "${EXCLUDES[@]}" -- "$pattern" . 2>/dev/null)"; then
+  shift 2
+  # -I skip binary, -r recurse, -n line numbers, -E extended regex.
+  # Remaining args ("$@") are extra grep flags scoped to THIS rule (e.g. per-rule excludes).
+  if hits="$(grep -rInE "${EXCLUDES[@]}" "$@" -- "$pattern" . 2>/dev/null)"; then
     echo "FAIL: $label"
     echo "$hits"
     echo
@@ -32,8 +34,15 @@ report() { # <label> <pattern>
 }
 
 # 1) GUID (hex 8-4-4-4-12). Placeholders like <workspace-id> or xxxxxxxx-... do not match.
+#    The PBIP model source (*.SemanticModel/ and *.Report/) is machine-generated and is
+#    inherently full of SYNTHETIC object GUIDs — lineageTag, nodeLineageTag, logicalId,
+#    relationship names — that are NOT Fabric resource IDs and carry no client data. Those
+#    trees are excluded here so the rule stops false-positiving on them. It stays fully
+#    active everywhere a human would actually paste a real workspace/model/agent GUID:
+#    agent config (agent.config.json, data-sources.yaml), docs, and model/prep-for-ai/.
 report "GUID found (use a <...-id> placeholder instead)" \
-  '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'
+  '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' \
+  --exclude-dir='*.SemanticModel' --exclude-dir='*.Report'
 
 # 2) Deployed-app hostname. A real subdomain label before .fabricapps.net; "*.fabricapps.net"
 #    (a wildcard mention in docs) does not match because "*" is not a label character.

@@ -11,6 +11,12 @@ on:
 
 jobs:
   guard:
+    # Cost control: while the repo is PRIVATE, Actions minutes are billed. The guard's real
+    # risk boundary is PUBLICATION, so the job is SKIPPED while private (a skipped job never
+    # allocates a runner -> 0 billable minutes) and enforced locally by the .githooks/pre-push
+    # hook instead. When the repo goes PUBLIC, Actions minutes are free and this job auto-arms
+    # as the unbypassable backstop — no manual flip needed.
+    if: ${{ github.event.repository.private == false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
