@@ -1,0 +1,28 @@
+# Data sources for the Contoso Retail agent.
+# A Fabric Data Agent supports up to 5 sources (combinable). This example uses one:
+# a Power BI semantic model (NL2DAX). See ../../docs/anatomy/02-data-sources.md.
+
+sources:
+  - type: semantic-model          # NL -> DAX
+    name: "ContosoRetail"
+    id: "<semantic-model-id>"     # placeholder — real value is a GUID
+    # IMPORTANT (semantic-model source): the DAX generator relies SOLELY on the
+    # model's metadata + Prep-for-AI. Data-source instructions and example queries
+    # set at the AGENT level are ignored for this source type — they are configured
+    # on the MODEL instead:
+    #   - descriptions / synonyms / summarizeBy  -> the model's TMDL
+    #   - AI instructions + AI data schema        -> ../model/prep-for-ai/
+    #   - verified answers (few-shots that DO influence generation) -> ./verified-answers.md
+    # See ../../docs/anatomy/04-source-instructions-and-fewshots.md.
+    tables:
+      # Star schema (connected):
+      - FactSales                 # grain: one order line (OrderKey x LineNumber)
+      - DimDate                   # related to FactSales[OrderDate]; primary trend date
+      - DimProduct                # CategoryName / SubCategoryName / ProductName / Brand
+      - DimStore                  # CountryName / State — where the sale happened
+      - DimCustomer               # Country / City — who bought
+      - DimCurrency               # CurrencyCode reference (all rows are MXN)
+      # Present but DISCONNECTED — do not use for analysis:
+      # - DimCurrencyExchange     # disconnected reference table; no relationship to FactSales
+      # Measures container (hidden):
+      - _Measures                 # all reusable measures live here

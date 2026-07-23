@@ -56,10 +56,15 @@ estrella retail con un contenedor `_Measures` categórico (issue [#5](https://gi
 **Abre [`model/ContosoRetail.pbix`](model/) para verlo con los datos embebidos** (sin configurar nada);
 este es el modelo que usamos para **evaluar** todo lo que la referencia afirma sobre un Fabric Data Agent.
 
-Luego, la config del Data Agent (`agent.config.json`, `data-sources.yaml`, `instructions.md`,
-`example-queries.json`) se escribe sobre este modelo en el issue
-[#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6) — reflejando la estructura de
-[`../contoso-vendor-spend/`](../contoso-vendor-spend/README.es.md) y la anatomía en
+La **config del Data Agent ya está construida** sobre este modelo en
+[`data-agent/`](data-agent/README.es.md) (issue
+[#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6)) — `agent.config.json`,
+`data-sources.yaml`, `instructions.md`, `example-queries.json`, más un
+[`verified-answers.md`](data-agent/verified-answers.md) listo para copiar-pegar. Refleja
+[`../contoso-vendor-spend/`](../contoso-vendor-spend/README.es.md) pero muestra el **placement
+corregido** para una fuente semantic-model: la sustancia que da forma al DAX (aditividad, semántica
+de medidas, regla de moneda) se configura en el **Prep-for-AI del modelo**
+([`model/prep-for-ai/`](model/prep-for-ai/)), no en el agente — ver la anatomía en
 [`docs/anatomy/`](../../docs/anatomy/00-overview.es.md).
 
 ## Atribución y licencia
