@@ -61,7 +61,7 @@ and fewer ambiguous columns.
 ## Anti-pattern
 
 **Pointing the agent at raw tables when a governed semantic model already encodes the metrics.** The
-agent then re-derives "total spend" with a `SUM` over a fact column, silently diverging from the
+agent then re-derives "total sales" with a `SUM` over a fact column, silently diverging from the
 model's official measure (which may filter, convert currency, or handle nulls). Equally common:
 **selecting every table "just in case,"** which floods the translator with lookalike columns and
 produces confident wrong joins. And **mixing five sources with no routing rules**, so the same
@@ -70,21 +70,21 @@ question resolves against a different source run to run.
 ## The Contoso example
 
 Contoso uses a **single semantic-model source**, declared in
-[`data-sources.yaml`](../../examples/contoso-vendor-spend/data-sources.yaml):
+[`data-sources.yaml`](../../examples/contoso-retail/data-agent/data-sources.yaml):
 
 ```yaml
 sources:
   - type: semantic-model          # NL -> DAX
-    name: "Contoso Vendor Spend (SM)"
+    name: "ContosoRetail"
     id: "<semantic-model-id>"     # placeholder — real value is a GUID
-    tables: [factspend, CALENDAR, dimbusinessunit, dimjobfamily,
-             dimlocation, dimspendtype, dimsupplier, dimcostcenter]
+    tables: [FactSales, DimDate, DimProduct, DimStore,
+             DimCustomer, DimCurrency, DimCurrencyExchange, _Measures]
 ```
 
 One curated model, eight named tables — not the whole workspace. Because it is a semantic model, the
-agent answers in DAX against **defined measures** (`[Total Spend]`, `[Invoiced Workers]`, …) rather
-than summing `factspend` columns, so the business logic stays where the modeler put it. The routing
-brief is a single line in the identity; a second source (say a lakehouse of raw invoices for
+agent answers in DAX against **defined measures** (`[Total Sales]`, `[Distinct Customers]`, …) rather
+than summing `FactSales` columns, so the business logic stays where the modeler put it. The routing
+brief is a single line in the identity; a second source (say a lakehouse of raw order lines for
 record-level lookups) would earn its own routing rule before being added.
 
 ---

@@ -67,13 +67,13 @@ moment the agent is promoted to another workspace.
 
 This repository *is* the config-as-code view of the Contoso agent, kept vendor-neutral:
 
-- [`agent.config.json`](../../examples/contoso-vendor-spend/agent.config.json) carries the
+- [`agent.config.json`](../../examples/contoso-retail/data-agent/agent.config.json) carries the
   Fabric identifiers as **placeholders** — `<workspace-id>`, `<agent-id>`, `<semantic-model-id>` —
   never real GUIDs (the sanitization guard fails the build if a GUID appears).
-- [`data-sources.yaml`](../../examples/contoso-vendor-spend/data-sources.yaml) is the readable analog
+- [`data-sources.yaml`](../../examples/contoso-retail/data-agent/data-sources.yaml) is the readable analog
   of `datasource.json` — the one semantic-model source and its eight selected tables — and, being a
   semantic model, it deliberately carries **no `fewshots.json`**.
-- [`instructions.md`](../../examples/contoso-vendor-spend/instructions.md) is the `aiInstructions`
+- [`instructions.md`](../../examples/contoso-retail/data-agent/instructions.md) is the `aiInstructions`
   payload in human form.
 
 Read together they show the shape a real agent's Git folder takes — the same files a reviewer would

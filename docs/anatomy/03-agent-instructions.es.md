@@ -28,7 +28,7 @@ explícita evita:
 - **Adivinar en silencio.** Ante "muéstrame el gasto" sin periodo ni grano, el default es elegir uno y
   responder como si se hubiera pedido — ocultando el supuesto. Una regla de desambiguación lo
   convierte en un supuesto declarado o una pregunta aclaratoria de una línea.
-- **Ratios per cápita.** "Gasto por trabajador" está mal si el denominador es la población
+- **Ratios per cápita.** "Ventas por cliente" está mal si el denominador es la población
   equivocada. Una regla que obliga al agente a *nombrar el denominador* hace el número auditable.
 - **Límites de gobernanza.** Las instrucciones operan *por debajo* de la intención organizacional y
   por rol; RLS se respeta lo menciones o no. Decir "respondes bajo la identidad de quien pregunta;
@@ -62,7 +62,7 @@ esperanza de saltarse RLS; no puede, y la instrucción solo confunde a quien la 
 
 ## El ejemplo Contoso
 
-Las [instrucciones de Contoso](../../examples/contoso-vendor-spend/instructions.md) son un conjunto
+Las [instrucciones de Contoso](../../examples/contoso-retail/data-agent/instructions.md) son un conjunto
 compacto de reglas globales, cada una apuntando a un modo de fallo real:
 
 1. **Usa medidas definidas** — nunca re-agregues una columna cruda cuando existe una medida.
@@ -70,9 +70,9 @@ compacto de reglas globales, cada una apuntando a un modo de fallo real:
    un %, tasa o promedio entre filas.
 3. **Reporta medidas compañeras juntas** — cuando una medida declara `ALSO REPORT WITH IT: …`,
    devuelve las compañeras para el mismo periodo y filtros, salvo que el usuario diga "solo".
-4. **Los ratios per cápita nombran su denominador** — el único headcount es *Invoiced Workers*;
-   etiquétalo ("por trabajador facturado (Invoiced Workers = N)"), nunca impliques fuerza laboral
-   total.
+4. **Los ratios per cápita nombran su denominador** — `[Sales per Customer]` divide entre *Distinct
+   Customers* (clientes que compraron en el periodo); etiquétalo ("por cliente (Distinct Customers =
+   N)"), nunca impliques la base total de clientes.
 5. **Prefiere tablas**, **6. RLS respetado automáticamente**, **7. Desambigua antes de adivinar.**
 
 También trae un **vocabulario de comandos** `::` (`::help`, `::about`, `::catalog`, `::improve`,

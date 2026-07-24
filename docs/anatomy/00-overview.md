@@ -48,7 +48,7 @@ Most material stops at "click Create and pick a lakehouse." The hard, undocument
 agent answer *correctly and consistently*: not summing a percentage, defaulting a vague "break it
 down" to the right dimensions, naming the denominator of a per-head ratio, disambiguating instead of
 guessing. Those behaviors come from the parts above, and this guide shows exactly how to write them —
-grounded in the **[Contoso Vendor Spend](../../examples/contoso-vendor-spend/)** example.
+grounded in the **[Contoso Retail](../../examples/contoso-retail/)** example.
 
 ## How to read it
 

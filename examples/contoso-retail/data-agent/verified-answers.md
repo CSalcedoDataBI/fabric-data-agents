@@ -4,7 +4,7 @@
 **semantic-model source**, this is where few-shots actually influence the Data Agent — an
 `example-queries.json` set at the *agent* level is ignored for NL2DAX, so the Q→DAX pairs below are
 seeded on the **model** instead. See
-[04 · Source instructions & few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.md).
+[04 · Source instructions & few-shots](../../../docs/anatomy/04-source-instructions-and-fewshots.md).
 
 ## How to apply
 

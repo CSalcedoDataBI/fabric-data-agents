@@ -4,10 +4,9 @@
 
 # Contoso Retail — a real, reproducible example dataset
 
-This is a **real, generated retail dataset** — not a described schema. It is the second worked
-example in this reference (alongside [Contoso Vendor Spend](../contoso-vendor-spend/), which is
-VMS/staffing). Where that one teaches the patterns over an *authored* model, this one grounds them in
-a dataset you can **regenerate byte-for-byte** and load into Fabric yourself.
+This is a **real, generated retail dataset** — not a described schema. It is *the* worked example in
+this reference: every pattern in [`docs/anatomy/`](../../docs/anatomy/) is illustrated against this
+model, and you can **regenerate it byte-for-byte** and load it into Fabric yourself.
 
 The data is produced by **[Contoso Universe Generator (CUG)](https://github.com/CSalcedoDataBI/contoso-universe-gen)**
 — a Python-native synthetic-data tool — which itself stands on the shoulders of **SQLBI's**
@@ -25,8 +24,10 @@ Same config + same seed = same data, always.
 cug generate -c config/contoso-retail-ref-es.toml -o ./output
 ```
 
-- **Locale:** `es` (Spanish names/categories; currencies incl. MXN/USD/EUR)
-- **Seed:** `42` · **Reporting period:** `2023-01-01` → `2024-12-31` (parallels the vendor-spend example)
+- **Locale:** `es` (Spanish names/categories). **Single currency: MXN** — verified, every one of the
+  126,524 fact rows is `MXN`, so no conversion is ever needed and `DimCurrencyExchange` stays
+  disconnected.
+- **Seed:** `42` · **Reporting period:** `2023-01-01` → `2024-12-31`
 - **Scale:** ~126k sales lines, 12k customers, 137 products, 25 stores (lean by design — a teaching
   dataset, not a scale test; regenerate at any size by changing `orders_count`)
 - **Format:** Parquet (compact, columnar — the natural lakehouse format). Add CSV/DuckDB/Delta with
@@ -60,7 +61,7 @@ The **Data Agent config is built** over this model in [`data-agent/`](data-agent
 [#6](https://github.com/CSalcedoDataBI/fabric-data-agents/issues/6)) — `agent.config.json`,
 `data-sources.yaml`, `instructions.md`, `example-queries.json`, plus a paste-ready
 [`verified-answers.md`](data-agent/verified-answers.md). It mirrors
-[`../contoso-vendor-spend/`](../contoso-vendor-spend/) but shows the **corrected placement** for a
+[`../contoso-retail/`](../contoso-retail/) but shows the **corrected placement** for a
 semantic-model source: the DAX-shaping substance (additivity, measure semantics, currency rule) is
 configured on the **model's Prep-for-AI** ([`model/prep-for-ai/`](model/prep-for-ai/)), not on the
 agent — see the anatomy in [`docs/anatomy/`](../../docs/anatomy/00-overview.md).

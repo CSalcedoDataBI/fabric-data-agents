@@ -1,9 +1,9 @@
 # Contoso Retail — agent instructions
 
 > These are the **agent-level instructions** for the Contoso Retail Data Agent. They are authored as
-> a worked, sanitized example for [Anatomy of a Fabric Data Agent](../../README.md). Read them
-> alongside [03 · Agent-level instructions](../../docs/anatomy/03-agent-instructions.md) and
-> [04 · Source instructions & few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.md).
+> a worked, sanitized example for [Anatomy of a Fabric Data Agent](../../../README.md). Read them
+> alongside [03 · Agent-level instructions](../../../docs/anatomy/03-agent-instructions.md) and
+> [04 · Source instructions & few-shots](../../../docs/anatomy/04-source-instructions-and-fewshots.md).
 >
 > **Placement note (semantic-model source).** For a Power BI semantic-model source, the DAX
 > generator relies **solely** on the model's metadata and its **Prep-for-AI** configuration — the
@@ -114,4 +114,4 @@ and tolerate light misspellings. A message with no `::` command is answered norm
 
 If this agent is consumed programmatically through the OpenAI Assistants API, that surface **shuts
 down 2026-08-26** — migrate to the Responses API / Azure AI Foundry OBO. See
-[08 · Lifecycle & the 2026 sunset](../../docs/anatomy/08-lifecycle-and-sunset.md).
+[08 · Lifecycle & the 2026 sunset](../../../docs/anatomy/08-lifecycle-and-sunset.md).

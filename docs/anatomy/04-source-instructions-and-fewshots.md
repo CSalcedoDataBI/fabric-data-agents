@@ -61,19 +61,19 @@ cryptic names**, where no amount of instruction overcomes metadata the generator
 
 ## The Contoso example
 
-Contoso's [`example-queries.json`](../../examples/contoso-vendor-spend/example-queries.json) is a
+Contoso's [`example-queries.json`](../../examples/contoso-retail/data-agent/example-queries.json) is a
 **teaching artifact** for this repository — it makes the intended DAX visible on the page. In the real
 product, because the source is a **semantic model**, these pairs would be authored as example DAX
 inside **Prep for AI › AI Instructions** on the model, not in the agent's example-queries pane. The
 set is deliberately diverse — one per pattern:
 
-- **Companion measures** — `EVALUATE ROW("Total Spend", [Total Spend], "Invoiced Workers", …)` shows
-  the reporting rule in action.
-- **Ranking** — `TOPN(5, …, [Total Spend], DESC)` → a labeled table.
-- **Per-head ratio** — `[Spend per Invoiced Worker]` returned *with* `[Invoiced Workers]`, so the
+- **Companion measures** — `EVALUATE ROW("Total Sales", [Total Sales], "Orders", [Orders], "Distinct Customers", [Distinct Customers])`
+  shows the reporting rule in action.
+- **Ranking** — `TOPN(5, …, [Total Sales], DESC)` → a labeled table.
+- **Per-capita ratio** — `[Sales per Customer]` returned *with* `[Distinct Customers]`, so the
   denominator is visible and never summed.
-- **Named-dimension breakdown** — SOW vs Staff Augmentation via `[% of Total Spend]`.
-- **Driver decomposition** — the `::drivers` delta split across a leadership dimension.
+- **Named-dimension breakdown** — `Online` vs `Store` channel via `[% of Total Sales]`.
+- **Driver decomposition** — the `::drivers` delta split across `DimProduct[CategoryName]`.
 
 Each example encodes a rule from [03](03-agent-instructions.md) as a concrete pattern the translator
 can imitate — the essence of few-shot design.

@@ -44,8 +44,8 @@ La elección fija el límite de responsabilidad y los modos de fallo que heredas
   solo cuando una clase real de preguntas necesite herramientas que el Data Agent no tiene.
 - **Mantén el Data Agent de solo lectura y de un solo propósito** — una herramienta limpia para que un
   orquestador la llame es una bien acotada, no un agente que hace de todo.
-- **Escríbele al agente externo una descripción de herramienta nítida** — "para preguntas de gasto de
-  proveedores y facturas de staffing, usa la herramienta Fabric" — y considera `tool_choice` /
+- **Escríbele al agente externo una descripción de herramienta nítida** — "para preguntas de ventas,
+  margen y clientes, usa la herramienta Fabric" — y considera `tool_choice` /
   invocación forzada cuando la herramienta deba correr siempre.
 - **Publica antes de integrar.** Solo un Data Agent *publicado* expone el endpoint
   (`.../groups/<workspace-id>/aiskills/<artifact-id>`) al que un orquestador se conecta.
@@ -65,9 +65,9 @@ cifras en algo sutilmente erróneo.
 
 El agente Contoso está autorado **directo**: una fuente de modelo semántico, un conjunto de
 instrucciones, probable en aislamiento — el contrato más simple que responde bien las preguntas de
-gasto de proveedores. Su diseño también lo vuelve una *buena herramienta de orquestador* el día que
-haga falta: es de solo lectura, de un solo dominio, y su rol ("analista de gasto de proveedores …
-proveedores de staffing, asignaciones, facturas") se lee casi textual como la descripción de
+ventas retail. Su diseño también lo vuelve una *buena herramienta de orquestador* el día que
+haga falta: es de solo lectura, de un solo dominio, y su rol ("analista de ventas retail …
+ventas, rentabilidad, clientes, productos, tiendas") se lee casi textual como la descripción de
 herramienta que un agente Foundry o Copilot externo usaría para decidir cuándo llamarlo. Nada de la
 construcción directa hay que deshacer para promoverlo a un flujo orquestado — publícalo, entrega el
 endpoint al agente externo, y el flujo de identidad OBO mantiene RLS intacto.

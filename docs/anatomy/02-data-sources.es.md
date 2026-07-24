@@ -72,22 +72,22 @@ modo que la misma pregunta se resuelve contra una fuente distinta corrida a corr
 ## El ejemplo Contoso
 
 Contoso usa una **única fuente de modelo semántico**, declarada en
-[`data-sources.yaml`](../../examples/contoso-vendor-spend/data-sources.yaml):
+[`data-sources.yaml`](../../examples/contoso-retail/data-agent/data-sources.yaml):
 
 ```yaml
 sources:
   - type: semantic-model          # NL -> DAX
-    name: "Contoso Vendor Spend (SM)"
+    name: "ContosoRetail"
     id: "<semantic-model-id>"     # placeholder — el valor real es un GUID
-    tables: [factspend, CALENDAR, dimbusinessunit, dimjobfamily,
-             dimlocation, dimspendtype, dimsupplier, dimcostcenter]
+    tables: [FactSales, DimDate, DimProduct, DimStore,
+             DimCustomer, DimCurrency, DimCurrencyExchange, _Measures]
 ```
 
 Un modelo curado, ocho tablas nombradas — no todo el workspace. Como es un modelo semántico, el agente
-responde en DAX contra **medidas definidas** (`[Total Spend]`, `[Invoiced Workers]`, …) en vez de
-sumar columnas de `factspend`, así que la lógica de negocio se queda donde la puso el modelador. El
-brief de ruteo es una sola línea en la identidad; una segunda fuente (digamos un lakehouse de facturas
-crudas para búsquedas a nivel de registro) se ganaría su propia regla de ruteo antes de añadirse.
+responde en DAX contra **medidas definidas** (`[Total Sales]`, `[Distinct Customers]`, …) en vez de
+sumar columnas de `FactSales`, así que la lógica de negocio se queda donde la puso el modelador. El
+brief de ruteo es una sola línea en la identidad; una segunda fuente (digamos un lakehouse de líneas de
+pedido crudas para búsquedas a nivel de registro) se ganaría su propia regla de ruteo antes de añadirse.
 
 ---
 _Siguiente: [03 · Instrucciones a nivel agente →](03-agent-instructions.es.md)_

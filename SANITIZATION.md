@@ -12,16 +12,22 @@ This document is the public contract for how that separation is guaranteed. It d
 | Private category | Public representation |
 |---|---|
 | Client / product / program names | The fictional company **Contoso** and its partners (Fabrikam, Northwind Traders, Adventure Works — Microsoft's standard fictional brands) |
-| The client's *verbatim* semantic model (its exact measure & dimension set) | A **representative** Contoso vendor-spend model that reuses the *shape* (companion measures, additivity, leadership dimensions) but is not a copy of any client schema |
+| The client's *verbatim* semantic model (its exact measure & dimension set) | **Contoso Retail** — a fully **synthetic**, generated retail sales model that reuses the *shape* (companion measures, additivity, declared breakdown defaults) but shares no schema with any client |
 | Fabric resource IDs (workspace, item, semantic model, agent) | Placeholders: `<workspace-id>`, `<agent-id>`, `<semantic-model-id>` |
 | Live application / endpoint URLs | Placeholders: `https://<your-validator-app>.example` |
-| Internal sample values (suppliers, business units, etc.) | Neutral fictional values |
+| Internal sample values (customers, stores, products, etc.) | Generated synthetic values |
 
 ## The example is representative, not extracted
 
-The [Contoso Vendor Spend Agent](examples/contoso-vendor-spend/) is **authored fresh** to teach the
+The [Contoso Retail Agent](examples/contoso-retail/) is **authored fresh** to teach the
 patterns. It is not a client agent with names swapped out. This is stronger than find-and-replace:
 there is no original to leak because the public artifact was built clean from the start.
+
+The underlying data is stronger still: it is **generated synthetic data**, not a masked extract, and
+it is published openly at
+[`CSalcedoDataBI/SampleDataSets/contoso-retail`](https://github.com/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail).
+Anyone can rebuild the model and reproduce every claim in this repository — which is only possible
+because there is nothing private in it.
 
 ## The guard
 

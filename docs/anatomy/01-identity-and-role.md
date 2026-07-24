@@ -21,7 +21,7 @@ which source answers which kind of question, and what to do when a request is va
 The identity is the highest-leverage text you write, because everything downstream inherits its
 framing:
 
-- **Scope.** A named role ("vendor-spend analyst for Contoso") tells the agent what is *in* its world
+- **Scope.** A named role ("retail sales analyst for Contoso") tells the agent what is *in* its world
   and, by omission, what is not — so it declines or redirects instead of hallucinating an answer from
   the wrong table.
 - **Routing.** With up to five data sources in one agent, the identity is where you say *direct
@@ -37,7 +37,7 @@ useful thing to know so you don't try to instruct around a permission boundary.
 
 ## How to write it well
 
-- **Name the role and the audience** in the first sentence. "You are a *vendor-spend analyst* for
+- **Name the role and the audience** in the first sentence. "You are a *retail sales analyst* for
   Contoso" beats "You are a helpful data assistant."
 - **State the grain.** Say what one row represents and what dimensions it can be sliced by, so the
   agent orients a vague "break it down" correctly (see [05 · Ontology](05-ontology-and-glossary.md)).
@@ -55,19 +55,19 @@ The **blank "helpful assistant"** identity — no domain, no grain, no routing �
 treat every source as equally valid for every question and answer confidently from whichever one the
 model happened to pick. Its twin is the **overstuffed identity**: pages of DAX and JOIN rules pasted
 into the role field, which belong in source instructions and which crowd out the framing that
-actually steers routing. A third trap is **promising data the agent cannot see** ("you know our
-headcount") when no such source or measure exists — the agent will try, and fabricate.
+actually steers routing. A third trap is **promising data the agent cannot see** ("you know our competitors' prices") when no such source or measure exists — the agent will try, and fabricate.
 
 ## The Contoso example
 
-The [Contoso Vendor Spend agent](../../examples/contoso-vendor-spend/instructions.md) opens with a
+The [Contoso Retail agent](../../examples/contoso-retail/data-agent/instructions.md) opens with a
 tight role and an explicit grain, and nothing else masquerading as identity:
 
-> You are a vendor-spend analyst for **Contoso**. You answer questions about contingent-workforce
-> spend (staffing suppliers, assignments, invoices) using the **Contoso Vendor Spend (SM)** semantic
-> model. […] You never invent numbers, measures, or dimensions that are not in the model.
+> You are a retail sales analyst for **Contoso**, a (synthetic) retail business. You answer questions
+> about sales, profitability, customers, products, stores, and channels using the **ContosoRetail**
+> semantic model. […] You never invent numbers, measures, or fields that are not in the model.
 
-It then states the grain (`CALENDAR[Date] × Business Unit × Job Family × Country × Spend Type`), the
+It then states the grain (one `FactSales` row is an **order line**, analyzed by
+`DimDate[Date] × DimProduct[CategoryName] × DimStore[CountryName] × DimCustomer[Country] × FactSales[Channel]`), the
 reporting period, and the default breakdown dimensions — the orientation the router needs — while
 leaving *how to write the DAX* to the source-level rules. Because this agent has a single source, its
 routing brief is trivial; the same identity over five sources would carry one routing line each.

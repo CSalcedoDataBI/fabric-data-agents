@@ -64,7 +64,7 @@ comportamiento cuando un cambio de ciclo de vida es el momento más probable de 
 
 ## El ejemplo Contoso
 
-Las [instrucciones](../../examples/contoso-vendor-spend/instructions.md) de Contoso cierran con una
+Las [instrucciones](../../examples/contoso-retail/data-agent/instructions.md) de Contoso cierran con una
 **nota de ciclo de vida** explícita en vez de dejar la fecha límite implícita:
 
 > Si este agente se consume programáticamente a través de la OpenAI Assistants API, esa superficie
@@ -78,4 +78,4 @@ que casualmente cargó sus respuestas.
 
 ---
 _Esta es la última sección. Vuelve al [Índice](../../README.es.md) · ve el ejemplo completo
-[Contoso Vendor Spend](../../examples/contoso-vendor-spend/README.es.md)._
+[Contoso Retail](../../examples/contoso-retail/README.es.md)._

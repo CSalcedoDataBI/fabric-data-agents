@@ -49,7 +49,7 @@ documentada es lograr que el agente responda *correcta y consistentemente*: no s
 resolver un "desglósalo" vago hacia las dimensiones correctas, nombrar el denominador de un ratio per
 cápita, desambiguar en vez de adivinar. Esos comportamientos vienen de las partes de arriba, y esta
 guía muestra exactamente cómo escribirlas — ancladas en el ejemplo
-**[Contoso Vendor Spend](../../examples/contoso-vendor-spend/README.es.md)**.
+**[Contoso Retail](../../examples/contoso-retail/README.es.md)**.
 
 ## Cómo leerla
 

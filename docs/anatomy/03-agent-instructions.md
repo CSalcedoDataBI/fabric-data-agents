@@ -26,7 +26,7 @@ Most wrong answers from a Data Agent are not translation failures — the SQL or
 - **Silent guessing.** Asked to "show spend" with no period or grain, the default is to pick one and
   answer as if it were asked for — hiding the assumption. A disambiguation rule turns that into a
   stated assumption or a one-line clarifying question.
-- **Per-head ratios.** "Spend per worker" is wrong if the denominator is the wrong population. A rule
+- **Per-capita ratios.** "Sales per customer" is wrong if the denominator is the wrong population. A rule
   that forces the agent to *name the denominator* makes the number auditable.
 - **Governance boundaries.** Instructions operate *below* organizational and role-based intent; RLS
   is enforced whether or not you mention it. Stating "you answer under the caller's identity; never
@@ -58,7 +58,7 @@ RLS; it cannot, and the instruction only misleads whoever reads it next.
 
 ## The Contoso example
 
-Contoso's [agent instructions](../../examples/contoso-vendor-spend/instructions.md) are a compact set
+Contoso's [agent instructions](../../examples/contoso-retail/data-agent/instructions.md) are a compact set
 of global rules, each targeting a real failure mode:
 
 1. **Use defined measures** — never re-aggregate a raw column when a measure exists.
@@ -66,8 +66,9 @@ of global rules, each targeting a real failure mode:
    average across rows.
 3. **Report companion measures together** — when a measure declares `ALSO REPORT WITH IT: …`, return
    the companions for the same period and filters, unless the user says "only" / "just".
-4. **Per-head ratios name their denominator** — the only headcount is *Invoiced Workers*; label it
-   ("per invoiced worker (Invoiced Workers = N)"), never imply total workforce.
+4. **Per-capita ratios name their denominator** — `[Sales per Customer]` divides by *Distinct
+   Customers* (customers who bought in the period); label it ("per customer (Distinct Customers = N)"),
+   never imply the total customer base.
 5. **Prefer tables**, **6. RLS respected automatically**, **7. Disambiguate before guessing.**
 
 It also ships a `::` **command vocabulary** (`::help`, `::about`, `::catalog`, `::improve`,

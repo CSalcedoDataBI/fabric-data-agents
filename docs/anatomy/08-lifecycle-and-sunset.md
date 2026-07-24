@@ -63,7 +63,7 @@ likeliest moment for quality to move.
 
 ## The Contoso example
 
-The Contoso [instructions](../../examples/contoso-vendor-spend/instructions.md) close with an explicit
+The Contoso [instructions](../../examples/contoso-retail/data-agent/instructions.md) close with an explicit
 **lifecycle note** rather than leaving the deadline implicit:
 
 > If this agent is consumed programmatically through the OpenAI Assistants API, that surface **shuts
@@ -77,4 +77,4 @@ its answers.
 
 ---
 _This is the last section. Back to the [Index](../../README.md) · see the full
-[Contoso Vendor Spend example](../../examples/contoso-vendor-spend/)._
+[Contoso Retail example](../../examples/contoso-retail/)._

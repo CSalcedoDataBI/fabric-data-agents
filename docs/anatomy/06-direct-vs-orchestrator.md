@@ -43,7 +43,7 @@ The choice sets the boundary of responsibility and the failure modes you inherit
   real class of questions needs tools the Data Agent doesn't have.
 - **Keep the Data Agent read-only and single-purpose** — a clean tool for an orchestrator to call is a
   well-scoped one, not a do-everything agent.
-- **Write the outer agent a crisp tool description** — "for vendor-spend and staffing-invoice
+- **Write the outer agent a crisp tool description** — "for retail sales, margin and customer
   questions, use the Fabric tool" — and consider `tool_choice` / forced invocation when the tool must
   always run.
 - **Publish before you integrate.** Only a *published* Data Agent exposes the endpoint
@@ -63,9 +63,9 @@ figures into something subtly wrong.
 ## The Contoso example
 
 The Contoso agent is authored **direct**: one semantic-model source, one instruction set, testable in
-isolation — the simplest contract that answers vendor-spend questions correctly. Its design also makes
+isolation — the simplest contract that answers retail sales questions correctly. Its design also makes
 it a *good orchestrator tool* the day that's needed: it is read-only, single-domain, and its role
-("vendor-spend analyst … staffing suppliers, assignments, invoices") reads almost verbatim as the
+("retail sales analyst … sales, profitability, customers, products, stores") reads almost verbatim as the
 tool description an outer Foundry or Copilot agent would use to decide when to call it. Nothing about
 the direct build has to be undone to promote it into an orchestrated workflow — publish it, hand the
 endpoint to the outer agent, and the OBO identity flow keeps RLS intact.

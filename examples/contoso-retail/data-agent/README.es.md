@@ -4,8 +4,8 @@
 # Contoso Retail — Data Agent (ejemplo trabajado)
 
 Un Fabric Data Agent completo y **sanitizado** sobre el [modelo semántico Contoso Retail](../model/),
-usado a lo largo de [Anatomía de un Fabric Data Agent](../../README.es.md). Está redactado limpio (no
-extraído de un cliente) — ver [SANITIZATION.md](../../SANITIZATION.md).
+usado a lo largo de [Anatomía de un Fabric Data Agent](../../../README.es.md). Está redactado limpio (no
+extraído de un cliente) — ver [SANITIZATION.md](../../../SANITIZATION.md).
 
 ## El escenario
 
@@ -33,7 +33,7 @@ agente solo vive el enrutamiento/tono/steering.
 > Esta es la corrección que distingue a este ejemplo: **las instrucciones de fuente y las consultas
 > de ejemplo puestas a nivel de *agente* se ignoran** para una fuente semantic-model. Esa sustancia
 > va en el modelo, donde el generador realmente la lee. Ver
-> [04 · Instrucciones de fuente y few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.es.md).
+> [04 · Instrucciones de fuente y few-shots](../../../docs/anatomy/04-source-instructions-and-fewshots.es.md).
 
 > **Matiz — medido, no supuesto.** Las **Agent instructions** de arriba (el system prompt) son algo
 > distinto de las *instrucciones de fuente* por origen, y **sí** moldean la respuesta: el orquestador
@@ -69,5 +69,5 @@ agente solo vive el enrutamiento/tono/steering.
 
 > Todo ID en `agent.config.json` y `data-sources.yaml` es un `<placeholder>`. Rellénalos con tus
 > propios GUIDs de workspace/modelo/agente al aprovisionar — ver
-> [07 · Aprovisionamiento](../../docs/anatomy/07-provisioning.es.md). El modelo publicado se llama
+> [07 · Aprovisionamiento](../../../docs/anatomy/07-provisioning.es.md). El modelo publicado se llama
 > `ContosoRetail` en tu workspace.

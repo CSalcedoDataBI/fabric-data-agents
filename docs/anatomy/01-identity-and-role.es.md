@@ -21,7 +21,7 @@ de alcance.
 
 La identidad es el texto de mayor palanca que escribes, porque todo lo de abajo hereda su encuadre:
 
-- **Alcance.** Un rol nombrado ("analista de gasto de proveedores para Contoso") le dice al agente qué
+- **Alcance.** Un rol nombrado ("analista de ventas retail para Contoso") le dice al agente qué
   está *dentro* de su mundo y, por omisión, qué no — así declina o redirige en vez de alucinar una
   respuesta desde la tabla equivocada.
 - **Ruteo.** Con hasta cinco fuentes de datos en un agente, la identidad es donde dices *manda las
@@ -38,7 +38,7 @@ instruir alrededor de un límite de permisos.
 
 ## Cómo escribirla bien
 
-- **Nombra el rol y la audiencia** en la primera frase. "Eres un *analista de gasto de proveedores*
+- **Nombra el rol y la audiencia** en la primera frase. "Eres un *analista de ventas retail*
   para Contoso" le gana a "Eres un asistente de datos útil".
 - **Declara el grano.** Di qué representa una fila y por qué dimensiones puede cortarse, para que el
   agente oriente bien un "desglósalo" vago (ver [05 · Ontología](05-ontology-and-glossary.es.md)).
@@ -57,20 +57,21 @@ agente trate cada fuente como igual de válida para cada pregunta y responda con
 el modelo eligió al azar. Su gemela es la **identidad sobrecargada**: páginas de reglas DAX y JOIN
 pegadas en el campo de rol, que pertenecen a las instrucciones de fuente y que desplazan el encuadre
 que de verdad guía el ruteo. Una tercera trampa es **prometer datos que el agente no puede ver**
-("conoces nuestro headcount") cuando no existe tal fuente o medida — el agente lo intentará, y
+("conoces los precios de la competencia") cuando no existe tal fuente o medida — el agente lo intentará, y
 fabricará.
 
 ## El ejemplo Contoso
 
-El [agente Contoso Vendor Spend](../../examples/contoso-vendor-spend/instructions.md) abre con un rol
+El [agente Contoso Retail](../../examples/contoso-retail/data-agent/instructions.md) abre con un rol
 ajustado y un grano explícito, y nada más disfrazado de identidad:
 
-> Eres un analista de gasto de proveedores para **Contoso**. Respondes preguntas sobre el gasto en
-> fuerza laboral contingente (proveedores de staffing, asignaciones, facturas) usando el modelo
-> semántico **Contoso Vendor Spend (SM)**. […] Nunca inventas números, medidas ni dimensiones que no
+> Eres un analista de ventas retail para **Contoso**, un negocio minorista (sintético). Respondes
+> preguntas sobre ventas, rentabilidad, clientes, productos, tiendas y canales usando el modelo
+> semántico **ContosoRetail**. […] Nunca inventas números, medidas ni dimensiones que no
 > estén en el modelo.
 
-Luego declara el grano (`CALENDAR[Date] × Business Unit × Job Family × Country × Spend Type`), el
+Luego declara el grano (cada fila de `FactSales` es una **línea de pedido**, analizable por
+`DimDate[Date] × DimProduct[CategoryName] × DimStore[CountryName] × DimCustomer[Country] × FactSales[Channel]`), el
 periodo de reporte y las dimensiones de desglose por defecto — la orientación que el router necesita —
 mientras deja *cómo escribir el DAX* a las reglas de fuente. Como este agente tiene una sola fuente,
 su brief de ruteo es trivial; la misma identidad sobre cinco fuentes llevaría una línea de ruteo por

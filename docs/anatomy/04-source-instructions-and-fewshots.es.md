@@ -66,19 +66,19 @@ puede leer.
 
 ## El ejemplo Contoso
 
-El [`example-queries.json`](../../examples/contoso-vendor-spend/example-queries.json) de Contoso es un
+El [`example-queries.json`](../../examples/contoso-retail/data-agent/example-queries.json) de Contoso es un
 **artefacto didáctico** para este repositorio — hace visible en la página el DAX pretendido. En el
 producto real, como la fuente es un **modelo semántico**, estos pares se autorarían como DAX de
 ejemplo dentro de **Prep for AI › AI Instructions** en el modelo, no en el panel de example-queries
 del agente. El conjunto es deliberadamente diverso — uno por patrón:
 
-- **Medidas compañeras** — `EVALUATE ROW("Total Spend", [Total Spend], "Invoiced Workers", …)` muestra
-  la regla de reporte en acción.
-- **Ranking** — `TOPN(5, …, [Total Spend], DESC)` → una tabla etiquetada.
-- **Ratio per cápita** — `[Spend per Invoiced Worker]` devuelto *con* `[Invoiced Workers]`, para que
+- **Medidas compañeras** — `EVALUATE ROW("Total Sales", [Total Sales], "Orders", [Orders], "Distinct Customers", [Distinct Customers])`
+  muestra la regla de reporte en acción.
+- **Ranking** — `TOPN(5, …, [Total Sales], DESC)` → una tabla etiquetada.
+- **Ratio per cápita** — `[Sales per Customer]` devuelto *con* `[Distinct Customers]`, para que
   el denominador sea visible y nunca se sume.
-- **Desglose por dimensión nombrada** — SOW vs Staff Augmentation vía `[% of Total Spend]`.
-- **Descomposición de drivers** — el split del delta de `::drivers` sobre una dimensión de liderazgo.
+- **Desglose por dimensión nombrada** — canal `Online` vs `Store` vía `[% of Total Sales]`.
+- **Descomposición de drivers** — el split del delta de `::drivers` sobre `DimProduct[CategoryName]`.
 
 Cada ejemplo codifica una regla de [03](03-agent-instructions.es.md) como un patrón concreto que el
 traductor puede imitar — la esencia del diseño de few-shots.

@@ -253,6 +253,6 @@ never the draft.
 - [Write effective prompts for AI instructions](https://learn.microsoft.com/power-bi/create-reports/copilot-prepare-data-ai-instructions#write-effective-prompts-for-ai-instructions).
 - [Prepare your data for AI (overview)](https://learn.microsoft.com/power-bi/create-reports/copilot-prepare-data-ai).
 
-**Repo anatomy docs:** [04 · Source instructions & few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.md) ·
-[06 · Direct vs. orchestrator](../../docs/anatomy/06-direct-vs-orchestrator.md) ·
-[03 · Agent-level instructions](../../docs/anatomy/03-agent-instructions.md).
+**Repo anatomy docs:** [04 · Source instructions & few-shots](../../../docs/anatomy/04-source-instructions-and-fewshots.md) ·
+[06 · Direct vs. orchestrator](../../../docs/anatomy/06-direct-vs-orchestrator.md) ·
+[03 · Agent-level instructions](../../../docs/anatomy/03-agent-instructions.md).

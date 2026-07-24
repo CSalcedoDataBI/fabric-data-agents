@@ -8,7 +8,7 @@
 
 A Fabric Data Agent turns plain-language questions into governed queries (SQL / DAX / KQL / GQL) over your lakehouse, warehouse, Power BI semantic model, KQL database, or graph — and answers under the caller's own identity. Getting one to answer *correctly and consistently* is less about clicking "Create" and more about the parts you write: its **role**, its **data sources**, its **instructions**, and its **example queries**.
 
-This repository dissects each of those parts. Every section follows the same shape — **What it is · Why it matters · How to write it well · Anti-pattern · The Contoso example** — and every part is illustrated end-to-end with one worked example: the **[Contoso Vendor Spend Agent](examples/contoso-vendor-spend/)**.
+This repository dissects each of those parts. Every section follows the same shape — **What it is · Why it matters · How to write it well · Anti-pattern · The Contoso example** — and every part is illustrated end-to-end with one worked example: the **[Contoso Retail Agent](examples/contoso-retail/)**.
 
 > This is not a "getting started" click-through. It is the reference you keep open *while* you author the agent, distilled from real, in-production Data Agent work (sanitized — see [SANITIZATION.md](SANITIZATION.md)).
 
@@ -26,11 +26,11 @@ This repository dissects each of those parts. Every section follows the same sha
 | 07 | [Provisioning](docs/anatomy/07-provisioning.md) | Portal · REST · PowerShell — the automation seam |
 | 08 | [Lifecycle & the 2026 sunset](docs/anatomy/08-lifecycle-and-sunset.md) | The Assistants API shuts down **2026-08-26** — plan your migration |
 
-## The worked example — Contoso Vendor Spend
+## The worked example — Contoso Retail
 
-A complete, sanitized Data Agent over a fictional **Contoso** contingent-workforce spend model (a "vendor management" dataset: staffing suppliers, assignments, invoices). It shows real patterns you rarely see spelled out: **companion measures reported together**, **additive-vs-non-additive discipline**, **leadership-dimension defaults**, a **per-head-ratio denominator caveat**, and **`::` steering commands**.
+A complete Data Agent over **Contoso Retail** — a synthetic retail sales model (~126k order lines in MXN; 8 tables: `FactSales`, `DimDate`, `DimProduct`, `DimStore`, `DimCustomer`, …). It shows real patterns you rarely see spelled out: **companion measures reported together**, **additive-vs-non-additive discipline**, **declared breakdown defaults**, a **per-capita-ratio denominator caveat**, and **`::` steering commands**. The dataset is [public](https://github.com/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail), so every claim here is reproducible.
 
-→ [`examples/contoso-vendor-spend/`](examples/contoso-vendor-spend/)
+→ [`examples/contoso-retail/`](examples/contoso-retail/)
 
 ## Who this is for
 

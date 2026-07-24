@@ -13,7 +13,7 @@ Thanks for your interest. This repo is a **reference**, so contributions are hel
    Anti-pattern · The Contoso example.* Consistency is the point.
 4. **Date your claims.** The Fabric Data Agent surface moves fast (preview features, API sunsets).
    Anything version-sensitive gets a date and a source link (prefer Microsoft Learn).
-5. **The example is authored clean.** Extend the [Contoso](examples/contoso-vendor-spend/) model;
+5. **The example is authored clean.** Extend the [Contoso](examples/contoso-retail/) model;
    don't paste from a real agent and rename.
 
 ## Workflow

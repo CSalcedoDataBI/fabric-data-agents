@@ -4,8 +4,8 @@
 # Contoso Retail — Data Agent (worked example)
 
 A complete, **sanitized** Fabric Data Agent over the [Contoso Retail semantic model](../model/),
-used throughout [Anatomy of a Fabric Data Agent](../../README.md). It is authored clean (not
-extracted from a client) — see [SANITIZATION.md](../../SANITIZATION.md).
+used throughout [Anatomy of a Fabric Data Agent](../../../README.md). It is authored clean (not
+extracted from a client) — see [SANITIZATION.md](../../../SANITIZATION.md).
 
 ## The scenario
 
@@ -32,7 +32,7 @@ substance is configured on the **model**, and only routing/tone/steering lives o
 > This is the correction that distinguishes this example: **data-source instructions and example
 > queries set at the *agent* level are ignored** for a semantic-model source. Put that substance on
 > the model, where the generator actually reads it. See
-> [04 · Source instructions & few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.md).
+> [04 · Source instructions & few-shots](../../../docs/anatomy/04-source-instructions-and-fewshots.md).
 
 > **Nuance — measured, not assumed.** The top-level **Agent instructions** (the system prompt) are a
 > different thing from per-source *data-source instructions*, and they **do** shape the answer — the
@@ -68,5 +68,5 @@ substance is configured on the **model**, and only routing/tone/steering lives o
 
 > Every ID in `agent.config.json` and `data-sources.yaml` is a `<placeholder>`. Fill them with your
 > own Fabric workspace/model/agent GUIDs when you provision — see
-> [07 · Provisioning](../../docs/anatomy/07-provisioning.md). The published model is named
+> [07 · Provisioning](../../../docs/anatomy/07-provisioning.md). The published model is named
 > `ContosoRetail` in your workspace.
