@@ -35,6 +35,17 @@ agente solo vive el enrutamiento/tono/steering.
 > va en el modelo, donde el generador realmente la lee. Ver
 > [04 · Instrucciones de fuente y few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.es.md).
 
+> **Matiz — medido, no supuesto.** Las **Agent instructions** de arriba (el system prompt) son algo
+> distinto de las *instrucciones de fuente* por origen, y **sí** moldean la respuesta: el orquestador
+> las lee y puede reformular la pregunta antes de que el generador de DAX la vea. En un A/B controlado
+> ([`ablation-prep-for-ai.es.md`](ablation-prep-for-ai.es.md)), el mismo agente contra un modelo
+> **sin** Prep-for-AI igual respetó moneda, no-aditividad y valores en español — porque esas
+> guardrails estaban en las Agent instructions y en el propio modelo. En estas preguntas limpias y
+> literales **no hubo diferencia reproducible** por Prep-for-AI: números, moneda, idioma y el DAX
+> *ejecutado* fueron idénticos. El Prep-for-AI rinde en términos que el modelo no puede inferir
+> —jerga de negocio, códigos internos, medidas duplicadas—: ver
+> [`prep-for-ai-reference.md`](prep-for-ai-reference.md).
+
 ## Patrones que demuestra este ejemplo
 
 - **Disciplina aditivo vs no-aditivo** — *Total Sales* / *Gross Margin* se pueden sumar; *Margin %*,

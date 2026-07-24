@@ -34,6 +34,17 @@ substance is configured on the **model**, and only routing/tone/steering lives o
 > the model, where the generator actually reads it. See
 > [04 · Source instructions & few-shots](../../docs/anatomy/04-source-instructions-and-fewshots.md).
 
+> **Nuance — measured, not assumed.** The top-level **Agent instructions** (the system prompt) are a
+> different thing from per-source *data-source instructions*, and they **do** shape the answer — the
+> orchestrator reads them and can reformulate the question before the DAX generator ever sees it. In a
+> controlled A/B ([`ablation-prep-for-ai.md`](ablation-prep-for-ai.md)), the same agent hitting a
+> model **without** Prep-for-AI still honored currency, non-additivity and Spanish values — because
+> those guardrails were in the Agent instructions and in the model itself. On these clean, literal
+> questions there was **no reproducible Prep-for-AI difference**: numbers, currency, language and the
+> *executed* DAX were identical. Prep-for-AI earns its keep on terms the model cannot infer — business
+> jargon, internal codes, duplicate measures — see
+> [`prep-for-ai-reference.md`](prep-for-ai-reference.md).
+
 ## Patterns this example demonstrates
 
 - **Additive vs non-additive discipline** — *Total Sales* / *Gross Margin* can be summed; *Margin %*,
