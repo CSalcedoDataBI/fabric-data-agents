@@ -50,7 +50,7 @@ instrucción dañina en una correcta. Ver
 [`examples/contoso-retail/model/prep-for-ai/ai-instructions.md`](../examples/contoso-retail/model/prep-for-ai/ai-instructions.md),
 que documenta cómo se verificó **cada** línea.
 
-### `verified-ai-instructions` *(nuestra — aún no publicada)*
+### `verified-ai-instructions` *(nuestra — incluida en este repo)*
 
 Redacta instrucciones *Prep for AI* en formato Microsoft y **verificadas contra los datos** para un
 modelo semántico de Power BI / Fabric, y las escribe directamente en el TMDL en disco. Cada
@@ -67,12 +67,18 @@ Qué incluye:
   valor a mano es la forma número uno de corromper el archivo — un solo salto de línea crudo en vez
   de `\n` invalida el JSON y Power BI descarta las instrucciones en silencio.
 
-> **Estado: redactada, no publicada.** Hoy esta skill vive solo en el `~/.claude/skills/` local de su
-> autor. Todavía no hay comando de instalación. Se lista aquí porque es la herramienta que produjo
-> las instrucciones verificadas de este repositorio — y porque el *método* que codifica se puede
-> reproducir a mano desde
-> [`examples/contoso-retail/model/prep-for-ai/ai-instructions.md`](../examples/contoso-retail/model/prep-for-ai/ai-instructions.md),
-> cuya tabla de verificación muestra exactamente qué se comprobó y cómo.
+Se distribuye **en este repositorio**, bajo la misma licencia MIT:
+
+```bash
+cp -r skills/verified-ai-instructions ~/.claude/skills/
+```
+
+→ [`skills/verified-ai-instructions/`](../skills/verified-ai-instructions/)
+
+Es la herramienta que produjo las instrucciones verificadas de este repositorio, así que el *método*
+también se puede reproducir a mano desde
+[`examples/contoso-retail/model/prep-for-ai/ai-instructions.md`](../examples/contoso-retail/model/prep-for-ai/ai-instructions.md),
+cuya tabla de verificación muestra exactamente qué se comprobó y cómo.
 
 ---
 
