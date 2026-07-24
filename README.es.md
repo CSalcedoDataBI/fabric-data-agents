@@ -26,6 +26,13 @@ Este repositorio disecciona cada una de esas partes. Cada sección sigue la mism
 | 07 | [Aprovisionamiento](docs/anatomy/07-provisioning.es.md) | Portal · REST · PowerShell — la costura de automatización |
 | 08 | [Ciclo de vida y la caducidad 2026](docs/anatomy/08-lifecycle-and-sunset.es.md) | La Assistants API se apaga el **2026-08-26** — planifica tu migración |
 
+## Herramientas
+
+Qué instalar antes de redactar — las skills oficiales de Microsoft para Fabric, y los apoyos de
+autoría que ayudan a escribir instrucciones **verificadas**, no solo plausibles.
+
+→ [`docs/tooling.es.md`](docs/tooling.es.md)
+
 ## El ejemplo trabajado — Contoso Retail
 
 Un Data Agent completo sobre **Contoso Retail** — un modelo sintético de ventas minoristas (~126 mil líneas de pedido en MXN; 8 tablas: `FactSales`, `DimDate`, `DimProduct`, `DimStore`, `DimCustomer`, …). Muestra patrones reales que rara vez se explican: **medidas compañeras reportadas juntas**, **disciplina aditiva vs. no-aditiva**, **desgloses por defecto declarados**, un **caveat del denominador en ratios per cápita** y **comandos de dirección `::`**. El dataset es [público](https://github.com/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail), así que todo lo que se afirma aquí es reproducible.
