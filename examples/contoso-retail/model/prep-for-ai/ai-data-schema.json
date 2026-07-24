@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/copilot/schema/1.0.0/schema.json",
+  "tables": [
+    {
+      "name": "FactSales",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "Quantity", "visibility": "Visible" },
+        { "name": "UnitPrice", "visibility": "Visible" },
+        { "name": "NetPrice", "visibility": "Visible" },
+        { "name": "UnitCost", "visibility": "Visible" },
+        { "name": "Channel", "visibility": "Visible", "synonyms": ["sales channel", "canal"] },
+        { "name": "OrderDate", "visibility": "Visible" },
+        { "name": "OrderKey", "visibility": "Hidden" },
+        { "name": "LineNumber", "visibility": "Hidden" },
+        { "name": "DeliveryDate", "visibility": "Hidden" },
+        { "name": "CustomerKey", "visibility": "Hidden" },
+        { "name": "StoreKey", "visibility": "Hidden" },
+        { "name": "ProductKey", "visibility": "Hidden" },
+        { "name": "CurrencyCode", "visibility": "Hidden" },
+        { "name": "ExchangeRate", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimProduct",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "ProductName", "visibility": "Visible", "synonyms": ["product", "producto"] },
+        { "name": "Brand", "visibility": "Visible", "synonyms": ["marca"] },
+        { "name": "Manufacturer", "visibility": "Visible", "synonyms": ["fabricante"] },
+        { "name": "CategoryName", "visibility": "Visible", "synonyms": ["category", "categoría"] },
+        { "name": "SubCategoryName", "visibility": "Visible", "synonyms": ["subcategory", "subcategoría"] },
+        { "name": "Color", "visibility": "Visible" },
+        { "name": "Cost", "visibility": "Visible" },
+        { "name": "Price", "visibility": "Visible" },
+        { "name": "ProductKey", "visibility": "Hidden" },
+        { "name": "ProductCode", "visibility": "Hidden" },
+        { "name": "WeightUnit", "visibility": "Hidden" },
+        { "name": "Weight", "visibility": "Hidden" },
+        { "name": "CategoryKey", "visibility": "Hidden" },
+        { "name": "SubCategoryKey", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimCustomer",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "Country", "visibility": "Visible", "synonyms": ["país"] },
+        { "name": "State", "visibility": "Visible", "synonyms": ["estado", "province"] },
+        { "name": "City", "visibility": "Visible", "synonyms": ["ciudad"] },
+        { "name": "Continent", "visibility": "Visible", "synonyms": ["continente"] },
+        { "name": "Gender", "visibility": "Visible", "synonyms": ["género", "sexo"] },
+        { "name": "Age", "visibility": "Visible", "synonyms": ["edad"] },
+        { "name": "Occupation", "visibility": "Visible", "synonyms": ["ocupación", "profession"] },
+        { "name": "GivenName", "visibility": "Visible" },
+        { "name": "Surname", "visibility": "Visible" },
+        { "name": "CustomerKey", "visibility": "Hidden" },
+        { "name": "GeoAreaKey", "visibility": "Hidden" },
+        { "name": "StartDT", "visibility": "Hidden" },
+        { "name": "EndDT", "visibility": "Hidden" },
+        { "name": "Title", "visibility": "Hidden" },
+        { "name": "MiddleInitial", "visibility": "Hidden" },
+        { "name": "StreetAddress", "visibility": "Hidden" },
+        { "name": "StateFull", "visibility": "Hidden" },
+        { "name": "ZipCode", "visibility": "Hidden" },
+        { "name": "CountryFull", "visibility": "Hidden" },
+        { "name": "Birthday", "visibility": "Hidden" },
+        { "name": "Company", "visibility": "Hidden" },
+        { "name": "Vehicle", "visibility": "Hidden" },
+        { "name": "Latitude", "visibility": "Hidden" },
+        { "name": "Longitude", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimStore",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "CountryName", "visibility": "Visible", "synonyms": ["country", "país de tienda"] },
+        { "name": "State", "visibility": "Visible" },
+        { "name": "Description", "visibility": "Visible", "synonyms": ["store", "tienda"] },
+        { "name": "Status", "visibility": "Visible" },
+        { "name": "SquareMeters", "visibility": "Visible" },
+        { "name": "StoreKey", "visibility": "Hidden" },
+        { "name": "StoreCode", "visibility": "Hidden" },
+        { "name": "GeoAreaKey", "visibility": "Hidden" },
+        { "name": "CountryCode", "visibility": "Hidden" },
+        { "name": "OpenDate", "visibility": "Hidden" },
+        { "name": "CloseDate", "visibility": "Hidden" },
+        { "name": "Weight", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimDate",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "Date", "visibility": "Visible", "synonyms": ["fecha"] },
+        { "name": "Year", "visibility": "Visible", "synonyms": ["año"] },
+        { "name": "Quarter", "visibility": "Visible", "synonyms": ["trimestre"] },
+        { "name": "Month", "visibility": "Visible", "synonyms": ["mes"] },
+        { "name": "MonthName", "visibility": "Visible" },
+        { "name": "YearMonth", "visibility": "Visible" },
+        { "name": "YearQuarter", "visibility": "Visible" },
+        { "name": "IsHoliday", "visibility": "Visible", "synonyms": ["holiday", "festivo"] },
+        { "name": "IsWorkingDay", "visibility": "Visible", "synonyms": ["working day", "día hábil"] },
+        { "name": "DateKey", "visibility": "Hidden" },
+        { "name": "MonthNameShort", "visibility": "Hidden" },
+        { "name": "Week", "visibility": "Hidden" },
+        { "name": "DayOfYear", "visibility": "Hidden" },
+        { "name": "DayOfMonth", "visibility": "Hidden" },
+        { "name": "DayOfWeek", "visibility": "Hidden" },
+        { "name": "DayName", "visibility": "Hidden" },
+        { "name": "DayNameShort", "visibility": "Hidden" },
+        { "name": "IsWeekend", "visibility": "Hidden" },
+        { "name": "HolidayName", "visibility": "Hidden" },
+        { "name": "WorkingDayOfMonth", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimCurrency",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "CurrencyCode", "visibility": "Visible" },
+        { "name": "CurrencyName", "visibility": "Visible" },
+        { "name": "Symbol", "visibility": "Visible" },
+        { "name": "CurrencyKey", "visibility": "Hidden" },
+        { "name": "Language", "visibility": "Hidden" }
+      ]
+    },
+    {
+      "name": "DimCurrencyExchange",
+      "visibility": "Hidden"
+    },
+    {
+      "name": "_Measures",
+      "visibility": "Visible",
+      "columns": [
+        { "name": "Placeholder", "visibility": "Hidden" }
+      ],
+      "measures": [
+        { "name": "Total Sales", "visibility": "Visible", "synonyms": ["revenue", "sales", "ventas", "ingresos"] },
+        { "name": "Total Quantity", "visibility": "Visible", "synonyms": ["units", "unidades"] },
+        { "name": "Orders", "visibility": "Visible", "synonyms": ["órdenes", "pedidos"] },
+        { "name": "Average Order Value", "visibility": "Visible", "synonyms": ["AOV", "ticket promedio"] },
+        { "name": "Total Cost", "visibility": "Visible", "synonyms": ["cost", "costo", "COGS"] },
+        { "name": "Gross Margin", "visibility": "Visible", "synonyms": ["margin", "margen", "utilidad"] },
+        { "name": "Margin %", "visibility": "Visible", "synonyms": ["margin percent", "margen %"] },
+        { "name": "Distinct Customers", "visibility": "Visible", "synonyms": ["customers", "clientes"] },
+        { "name": "Sales per Customer", "visibility": "Visible", "synonyms": ["ventas por cliente"] },
+        { "name": "Average Selling Price", "visibility": "Visible", "synonyms": ["ASP", "precio promedio"] },
+        { "name": "Units per Order", "visibility": "Visible", "synonyms": ["unidades por orden"] },
+        { "name": "% of Total Sales", "visibility": "Visible", "synonyms": ["share", "participación"] },
+        { "name": "Sales YTD", "visibility": "Visible", "synonyms": ["year to date", "acumulado del año"] },
+        { "name": "Sales PY", "visibility": "Visible", "synonyms": ["prior year", "año anterior"] },
+        { "name": "Sales YoY %", "visibility": "Visible", "synonyms": ["year over year", "crecimiento anual"] }
+      ]
+    }
+  ]
+}

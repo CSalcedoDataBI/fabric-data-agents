@@ -1,0 +1,36 @@
+[
+  {
+    "image": "raw/img_17_line863.png",
+    "out": "annotated/01-buildwithai-hedges.png",
+    "redact": [[1648,0,28,28]],
+    "boxes": [
+      {"xywh":[423,38,152,28],"color":"red","thick":4},
+      {"xywh":[791,474,806,228],"color":"red","thick":3}
+    ],
+    "arrows": [
+      {"from":[499,120],"to":[499,66],"color":"red","thick":4}
+    ],
+    "labels": [
+      {"xy":[300,150],"text":"Build agent with AI = copiloto de AUTORIA (NO ejecuta)","color":"red","scale":0.8},
+      {"xy":[810,468],"text":"propone SQL, no corre nada","color":"red","scale":0.75}
+    ]
+  },
+  {
+    "image": "raw/img_24_line910.png",
+    "out": "annotated/02-testdataagent-margin.png",
+    "redact": [[1665,0,28,28]],
+    "boxes": [
+      {"xywh":[582,44,132,28],"color":"green","thick":4},
+      {"xywh":[945,686,475,36],"color":"green","thick":3},
+      {"xywh":[983,534,430,40],"color":"green","thick":2}
+    ],
+    "arrows": [
+      {"from":[648,120],"to":[648,72],"color":"green","thick":4}
+    ],
+    "labels": [
+      {"xy":[520,150],"text":"Test data agent = RUNTIME (ejecuta)","color":"green","scale":0.8},
+      {"xy":[945,675],"text":"Output ejecutado: 3,938,789 MXN | 19.8%","color":"green","scale":0.72},
+      {"xy":[983,528],"text":"medidas reales","color":"green","scale":0.62}
+    ]
+  }
+]

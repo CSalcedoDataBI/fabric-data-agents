@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What were total sales in 2024?",
+    "dax": "EVALUATE ROW(\"Total Sales\", CALCULATE([Total Sales], DimDate[Year] = 2024), \"Total Quantity\", CALCULATE([Total Quantity], DimDate[Year] = 2024), \"Orders\", CALCULATE([Orders], DimDate[Year] = 2024))",
+    "note": "Companion volume measures (Total Quantity, Orders) returned alongside revenue."
+  },
+  {
+    "question": "Sales by product category",
+    "dax": "EVALUATE SUMMARIZECOLUMNS(DimProduct[CategoryName], \"Total Sales\", [Total Sales], \"% of Total Sales\", [% of Total Sales]) ORDER BY [Total Sales] DESC",
+    "note": "Breakdown by the default product dimension; % of Total Sales shows mix. Category values are in Spanish."
+  },
+  {
+    "question": "Margin % by store country",
+    "dax": "EVALUATE SUMMARIZECOLUMNS(DimStore[CountryName], \"Gross Margin\", [Gross Margin], \"Margin %\", [Margin %]) ORDER BY [Gross Margin] DESC",
+    "note": "Non-additive rate: [Margin %] is recomputed per country, never summed. Absolute [Gross Margin] shown alongside."
+  },
+  {
+    "question": "Monthly sales trend for 2024 with year-over-year change",
+    "dax": "EVALUATE SUMMARIZECOLUMNS(DimDate[YearMonth], DimDate[MonthName], FILTER(ALL(DimDate[Year]), DimDate[Year] = 2024), \"Total Sales\", [Total Sales], \"Sales PY\", [Sales PY], \"Sales YoY %\", [Sales YoY %]) ORDER BY DimDate[YearMonth]",
+    "note": "Time analysis over DimDate[Date]; YoY compares to 2023 via [Sales PY]. [Sales YoY %] is non-additive."
+  },
+  {
+    "question": "Top 10 products by sales",
+    "dax": "EVALUATE TOPN(10, SUMMARIZECOLUMNS(DimProduct[ProductName], \"Total Sales\", [Total Sales]), [Total Sales], DESC) ORDER BY [Total Sales] DESC",
+    "note": "Ranking -> tabular output with the measure column labeled."
+  },
+  {
+    "question": "Online vs Store split of total sales",
+    "dax": "EVALUATE SUMMARIZECOLUMNS(FactSales[Channel], \"Total Sales\", [Total Sales], \"Orders\", [Orders], \"% of Total Sales\", [% of Total Sales]) ORDER BY [Total Sales] DESC",
+    "note": "Breakdown by the leadership dimension the user named; Channel values are Online / Store."
+  },
+  {
+    "question": "What drove the change in Total Sales from 2023 to 2024?",
+    "dax": "EVALUATE SUMMARIZECOLUMNS(DimProduct[CategoryName], \"Sales 2023\", CALCULATE([Total Sales], DimDate[Year] = 2023), \"Sales 2024\", CALCULATE([Total Sales], DimDate[Year] = 2024)) ORDER BY [Sales 2024] DESC",
+    "note": "::drivers pattern — decompose the delta across a default dimension; report absolute and % change per member."
+  }
+]

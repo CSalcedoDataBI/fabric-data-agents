@@ -1,0 +1,3 @@
+# Raw, un-sanitized captures may contain the workspace name / account — never commit them.
+raw/
+*.raw.png

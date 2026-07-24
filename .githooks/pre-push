@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Local sanitization gate — the FREE, private-phase enforcement of the public guard.
+#
+# While the repo is private, the CI workflow (.github/workflows/sanitize.yml) is skipped to
+# avoid burning billable Actions minutes; this hook runs the SAME guard locally so nothing
+# unsanitized can leave the machine. When the repo goes public, CI re-arms as the free,
+# unbypassable backstop.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+# Bypass (use sparingly):  git push --no-verify
+set -euo pipefail
+
+ROOT="$(git rev-parse --show-toplevel)"
+GUARD="$ROOT/scripts/sanitize-check.sh"
+
+if [ ! -f "$GUARD" ]; then
+  echo "pre-push: sanitize-check.sh not found — skipping guard." >&2
+  exit 0
+fi
+
+echo "pre-push: running sanitization guard..." >&2
+if ! bash "$GUARD"; then
+  echo >&2
+  echo "pre-push: BLOCKED — sanitization guard failed. Fix the matches above, or" >&2
+  echo "          bypass deliberately with: git push --no-verify" >&2
+  exit 1
+fi

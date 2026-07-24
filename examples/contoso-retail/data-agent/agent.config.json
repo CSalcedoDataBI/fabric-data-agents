@@ -1,0 +1,14 @@
+{
+  "id": "contoso-retail",
+  "displayName": "Contoso Retail",
+  "description": "Natural-language Q&A over the Contoso Retail sales model — sales, profitability, customers, products, stores, and channels.",
+  "fabric": {
+    "workspaceId": "<workspace-id>",
+    "itemId": "<agent-id>",
+    "semanticModelId": "<semantic-model-id>"
+  },
+  "sources": "./data-sources.yaml",
+  "instructions": "./instructions.md",
+  "examples": "./example-queries.json",
+  "notes": "The published model is named 'ContosoRetail' in your Fabric workspace. Every ID above is a <placeholder> — fill them with your own workspace/model/agent GUIDs when you provision (see ../../docs/anatomy/07-provisioning.md). For a single semantic-model source, the DAX-shaping substance lives in the model's Prep-for-AI, not here — see ../model/prep-for-ai/ and ./verified-answers.md."
+}
