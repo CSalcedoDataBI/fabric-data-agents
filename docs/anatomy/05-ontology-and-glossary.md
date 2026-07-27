@@ -67,7 +67,7 @@ and the model, not as a separate file:
 - **Values are illustrated, not guessed.** `FactSales[Channel]` is `Online` or `Store`; category
   values are **in Spanish** (`Electrónica`, `Electrodomésticos`) — stating this stops the agent from
   filtering on `Electronics` and returning an empty result.
-- **`::about` / `::catalog`** surface this glossary to users on demand, turning the ontology into a
+- **`>about`** surfaces this glossary to users on demand, turning the ontology into a
   discoverable feature rather than hidden configuration.
 
 ---

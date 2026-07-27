@@ -32,6 +32,6 @@
   {
     "question": "What drove the change in Total Sales from 2023 to 2024?",
     "dax": "EVALUATE SUMMARIZECOLUMNS(DimProduct[CategoryName], \"Sales 2023\", CALCULATE([Total Sales], DimDate[Year] = 2023), \"Sales 2024\", CALCULATE([Total Sales], DimDate[Year] = 2024)) ORDER BY [Sales 2024] DESC",
-    "note": "::drivers pattern — decompose the delta across a default dimension; report absolute and % change per member."
+    "note": "Driver-decomposition pattern — decompose the delta across a default dimension; report absolute and % change per member."
   }
 ]

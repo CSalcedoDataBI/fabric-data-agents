@@ -56,7 +56,7 @@ agente solo vive el enrutamiento/tono/steering.
   debe usarse. Se eliminó una instrucción plausible de "convertir monedas" tras revisar los datos —
   el punto de todo el ejemplo.
 - **Valores de dimensión en español** — categorías y otras etiquetas están en español; al agente se le dice.
-- **Comandos de steering `::`** — `::about`, `::catalog`, `::improve`, `::validate`, `::drivers`.
+- **Comandos de steering `>`** — `>help`, `>about`.
 
 ## El modelo de un vistazo
 

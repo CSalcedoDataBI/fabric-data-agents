@@ -78,7 +78,7 @@ del agente. El conjunto es deliberadamente diverso — uno por patrón:
 - **Ratio per cápita** — `[Sales per Customer]` devuelto *con* `[Distinct Customers]`, para que
   el denominador sea visible y nunca se sume.
 - **Desglose por dimensión nombrada** — canal `Online` vs `Store` vía `[% of Total Sales]`.
-- **Descomposición de drivers** — el split del delta de `::drivers` sobre `DimProduct[CategoryName]`.
+- **Descomposición de drivers** — el split del delta interanual sobre `DimProduct[CategoryName]`.
 
 Cada ejemplo codifica una regla de [03](03-agent-instructions.es.md) como un patrón concreto que el
 traductor puede imitar — la esencia del diseño de few-shots.
