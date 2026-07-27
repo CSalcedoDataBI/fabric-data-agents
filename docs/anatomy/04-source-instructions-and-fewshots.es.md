@@ -72,8 +72,8 @@ producto real, como la fuente es un **modelo semántico**, estos pares se autora
 ejemplo dentro de **Prep for AI › AI Instructions** en el modelo, no en el panel de example-queries
 del agente. El conjunto es deliberadamente diverso — uno por patrón:
 
-- **Medidas compañeras** — `EVALUATE ROW("Total Sales", [Total Sales], "Orders", [Orders], "Distinct Customers", [Distinct Customers])`
-  muestra la regla de reporte en acción.
+- **Medidas compañeras** — `EVALUATE ROW("Total Sales", [Total Sales], "Total Quantity", [Total Quantity], "Orders", [Orders])`
+  muestra la regla de reporte en acción (Total Sales declara Total Quantity y Orders como compañeras).
 - **Ranking** — `TOPN(5, …, [Total Sales], DESC)` → una tabla etiquetada.
 - **Ratio per cápita** — `[Sales per Customer]` devuelto *con* `[Distinct Customers]`, para que
   el denominador sea visible y nunca se sume.
