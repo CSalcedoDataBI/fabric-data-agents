@@ -44,7 +44,7 @@ Most wrong answers from a Data Agent are not translation failures — the SQL or
   numbers.
 - **Encode "never invent."** No measures, dimensions, or values that are not in the source.
 - **Give users steering, not a maze.** A small, documented command vocabulary (a help/catalog/validate
-  set) is more discoverable than a wall of prose — see the Contoso `::` commands below.
+  set) is more discoverable than a wall of prose — see the Contoso `>` commands below.
 - **Respect the character budget.** Identity + global rules share 15k characters; push
   source-specific query examples down to [04](04-source-instructions-and-fewshots.md).
 

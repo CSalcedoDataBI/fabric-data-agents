@@ -10,7 +10,7 @@
 > additivity rules, measure semantics, breakdown defaults, and the currency rule below are
 > **enforced in the model**, not here. The definitive copy lives in
 > [`../model/prep-for-ai/ai-instructions.md`](../model/prep-for-ai/ai-instructions.md). This file
-> is the **agent-level** contract: role, scope, tone, output shape, and the `::` steering commands.
+> is the **agent-level** contract: role, scope, tone, output shape, and the `>` steering commands.
 > The measure/dimension summary below is a human-readable orientation, not the generator's source
 > of truth.
 

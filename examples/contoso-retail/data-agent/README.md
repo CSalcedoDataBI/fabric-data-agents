@@ -24,7 +24,7 @@ substance is configured on the **model**, and only routing/tone/steering lives o
 |---|---|---|
 | Identity + Fabric resource IDs | Agent | [`agent.config.json`](agent.config.json) |
 | The semantic-model source (NL2DAX) | Agent | [`data-sources.yaml`](data-sources.yaml) |
-| Role, scope, tone, output shape, `::` commands | Agent | [`instructions.md`](instructions.md) |
+| Role, scope, tone, output shape, `>` commands | Agent | [`instructions.md`](instructions.md) |
 | Additivity, measure semantics, breakdown & currency rules | **Model** (Prep-for-AI) | [`../model/prep-for-ai/ai-instructions.md`](../model/prep-for-ai/ai-instructions.md) |
 | Table/column/measure visibility + synonyms | **Model** (Prep-for-AI) | [`../model/prep-for-ai/ai-data-schema.json`](../model/prep-for-ai/ai-data-schema.json) |
 | Governed, tested Q→DAX few-shots | **Model** (Verified Answers) | [`verified-answers.md`](verified-answers.md) · mirror in [`example-queries.json`](example-queries.json) |

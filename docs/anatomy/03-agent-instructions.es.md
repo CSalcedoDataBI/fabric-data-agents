@@ -46,7 +46,7 @@ explícita evita:
   esconde los números.
 - **Codifica el "nunca inventar".** Ni medidas, ni dimensiones, ni valores que no estén en la fuente.
 - **Dale al usuario timón, no un laberinto.** Un vocabulario de comandos pequeño y documentado (un
-  conjunto ayuda/catálogo/validar) es más descubrible que un muro de prosa — ver los comandos `::` de
+  conjunto ayuda/catálogo/validar) es más descubrible que un muro de prosa — ver los comandos `>` de
   Contoso abajo.
 - **Respeta el presupuesto de caracteres.** Identidad + reglas globales comparten 15k caracteres;
   empuja los ejemplos de consulta específicos de fuente hacia

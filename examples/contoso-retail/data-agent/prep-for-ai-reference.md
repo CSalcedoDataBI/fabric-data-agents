@@ -88,7 +88,7 @@ decision rule; the file-by-file "what you author / where it lives" map is in the
 
 | Substance | Author it on | Read by | Notes |
 |---|---|---|---|
-| Role, scope, tone, output shape, routing, `::` steering commands | **Agent instructions** (system prompt) | Orchestrator | Also carries global guardrails (currency, additivity, language) that the orchestrator propagates. 15,000-char budget. |
+| Role, scope, tone, output shape, routing, `>` steering commands | **Agent instructions** (system prompt) | Orchestrator | Also carries global guardrails (currency, additivity, language) that the orchestrator propagates. 15,000-char budget. |
 | Business-term → field/filter mappings, jargon, internal codes, additivity rules, measure semantics, breakdown defaults, currency rule | **Model → Prep-for-AI → AI instructions** | DAX-generation tool | The only place the generator reads business logic. 10,000-char limit. Requires Q&A enabled on the model. |
 | Which tables/columns/measures the AI can see (Visible/Hidden) + synonyms | **Model → Prep-for-AI → AI data schema** | DAX-generation tool | Hide look-alike measures so "sales" cannot resolve to the wrong one. Include dependent objects a measure references. |
 | Governed, tested question → DAX few-shots | **Model → Verified Answers** | DAX-generation tool | For a semantic-model source, few-shots authored on the **agent** (`example-queries.json`) are **ignored**; seed them on the model. |
