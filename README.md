@@ -35,7 +35,7 @@ help you write instructions that are **verified**, not merely plausible.
 
 ## The worked example — Contoso Retail
 
-A complete Data Agent over **Contoso Retail** — a synthetic retail sales model (~126k order lines in MXN; 8 tables: `FactSales`, `DimDate`, `DimProduct`, `DimStore`, `DimCustomer`, …). It shows real patterns you rarely see spelled out: **companion measures reported together**, **additive-vs-non-additive discipline**, **declared breakdown defaults**, a **per-capita-ratio denominator caveat**, and **`::` steering commands**. The dataset is [public](https://github.com/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail), so every claim here is reproducible.
+A complete Data Agent over **Contoso Retail** — a synthetic retail sales model (~126k order lines in MXN; 8 tables: `FactSales`, `DimDate`, `DimProduct`, `DimStore`, `DimCustomer`, …). It shows real patterns you rarely see spelled out: **companion measures reported together**, **additive-vs-non-additive discipline**, **declared breakdown defaults**, a **per-capita-ratio denominator caveat**, and **`>` steering commands**. The dataset is [public](https://github.com/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail), so every claim here is reproducible.
 
 → [`examples/contoso-retail/`](examples/contoso-retail/)
 

@@ -25,7 +25,7 @@ agente solo vive el enrutamiento/tono/steering.
 |---|---|---|
 | Identidad + IDs de recursos Fabric | Agente | [`agent.config.json`](agent.config.json) |
 | La fuente semantic-model (NL2DAX) | Agente | [`data-sources.yaml`](data-sources.yaml) |
-| Rol, alcance, tono, formato de salida, comandos `::` | Agente | [`instructions.md`](instructions.md) |
+| Rol, alcance, tono, formato de salida, comandos `>` | Agente | [`instructions.md`](instructions.md) |
 | Aditividad, semántica de medidas, breakdown y regla de moneda | **Modelo** (Prep-for-AI) | [`../model/prep-for-ai/ai-instructions.md`](../model/prep-for-ai/ai-instructions.md) |
 | Visibilidad de tablas/columnas/medidas + sinónimos | **Modelo** (Prep-for-AI) | [`../model/prep-for-ai/ai-data-schema.json`](../model/prep-for-ai/ai-data-schema.json) |
 | Few-shots Pregunta→DAX gobernados y probados | **Modelo** (Verified Answers) | [`verified-answers.md`](verified-answers.md) · espejo en [`example-queries.json`](example-queries.json) |
