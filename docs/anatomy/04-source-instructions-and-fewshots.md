@@ -67,8 +67,8 @@ product, because the source is a **semantic model**, these pairs would be author
 inside **Prep for AI › AI Instructions** on the model, not in the agent's example-queries pane. The
 set is deliberately diverse — one per pattern:
 
-- **Companion measures** — `EVALUATE ROW("Total Sales", [Total Sales], "Orders", [Orders], "Distinct Customers", [Distinct Customers])`
-  shows the reporting rule in action.
+- **Companion measures** — `EVALUATE ROW("Total Sales", [Total Sales], "Total Quantity", [Total Quantity], "Orders", [Orders])`
+  shows the reporting rule in action (Total Sales declares Total Quantity and Orders as its companions).
 - **Ranking** — `TOPN(5, …, [Total Sales], DESC)` → a labeled table.
 - **Per-capita ratio** — `[Sales per Customer]` returned *with* `[Distinct Customers]`, so the
   denominator is visible and never summed.
