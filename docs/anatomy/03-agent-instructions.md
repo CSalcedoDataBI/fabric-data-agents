@@ -71,10 +71,10 @@ of global rules, each targeting a real failure mode:
    never imply the total customer base.
 5. **Prefer tables**, **6. RLS respected automatically**, **7. Disambiguate before guessing.**
 
-It also ships a `::` **command vocabulary** (`::help`, `::about`, `::catalog`, `::improve`,
-`::validate`, `::drivers`) so users can steer the agent explicitly — commands begin with `::` rather
-than `/` precisely because host assistants intercept a leading slash. These are agent-level because
-they hold for every question, independent of which source (here, only one) answers it.
+It also ships a small `>` **command vocabulary** (`>help`, `>about`) so users can steer the agent
+explicitly — commands begin with `>` rather than `/` precisely because host assistants intercept a
+leading slash. These are agent-level because they hold for every question, independent of which
+source (here, only one) answers it.
 
 ---
 _Next: [04 · Source instructions & few-shots →](04-source-instructions-and-fewshots.md)_

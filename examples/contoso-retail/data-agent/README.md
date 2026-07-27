@@ -55,7 +55,7 @@ substance is configured on the **model**, and only routing/tone/steering lives o
   must not be used. A plausible-sounding "convert currencies" instruction was removed after checking
   the data — the point of the whole example.
 - **Spanish dimension values** — categories and other labels are in Spanish; the agent is told so.
-- **`::` steering commands** — `::about`, `::catalog`, `::improve`, `::validate`, `::drivers`.
+- **`>` steering commands** — `>help`, `>about`.
 
 ## The model at a glance
 

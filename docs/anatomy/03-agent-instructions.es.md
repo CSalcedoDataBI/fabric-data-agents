@@ -75,11 +75,10 @@ compacto de reglas globales, cada una apuntando a un modo de fallo real:
    N)"), nunca impliques la base total de clientes.
 5. **Prefiere tablas**, **6. RLS respetado automáticamente**, **7. Desambigua antes de adivinar.**
 
-También trae un **vocabulario de comandos** `::` (`::help`, `::about`, `::catalog`, `::improve`,
-`::validate`, `::drivers`) para que los usuarios timoneen el agente explícitamente — los comandos
-empiezan con `::` en vez de `/` precisamente porque los asistentes anfitriones interceptan una barra
-inicial. Son a nivel agente porque valen para cada pregunta, independientemente de qué fuente (aquí,
-una sola) responda.
+También trae un pequeño **vocabulario de comandos** `>` (`>help`, `>about`) para que los usuarios
+timoneen el agente explícitamente — los comandos empiezan con `>` en vez de `/` precisamente porque
+los asistentes anfitriones interceptan una barra inicial. Son a nivel agente porque valen para cada
+pregunta, independientemente de qué fuente (aquí, una sola) responda.
 
 ---
 _Siguiente: [04 · Instrucciones de fuente y few-shots →](04-source-instructions-and-fewshots.es.md)_

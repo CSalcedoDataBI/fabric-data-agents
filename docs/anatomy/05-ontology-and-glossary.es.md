@@ -71,7 +71,7 @@ aparte:
 - **Los valores se ilustran, no se adivinan.** `FactSales[Channel]` es `Online` o `Store`; los valores
   de categoría están **en español** (`Electrónica`, `Electrodomésticos`) — decirlo evita que el agente
   filtre por `Electronics` y devuelva vacío.
-- **`::about` / `::catalog`** exponen este glosario a los usuarios bajo demanda, volviendo la ontología
+- **`>about`** expone este glosario a los usuarios bajo demanda, volviendo la ontología
   una funcionalidad descubrible en vez de configuración escondida.
 
 ---

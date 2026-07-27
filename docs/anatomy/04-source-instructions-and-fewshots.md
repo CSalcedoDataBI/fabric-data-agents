@@ -73,7 +73,7 @@ set is deliberately diverse — one per pattern:
 - **Per-capita ratio** — `[Sales per Customer]` returned *with* `[Distinct Customers]`, so the
   denominator is visible and never summed.
 - **Named-dimension breakdown** — `Online` vs `Store` channel via `[% of Total Sales]`.
-- **Driver decomposition** — the `::drivers` delta split across `DimProduct[CategoryName]`.
+- **Driver decomposition** — the year-over-year delta split across `DimProduct[CategoryName]`.
 
 Each example encodes a rule from [03](03-agent-instructions.md) as a concrete pattern the translator
 can imitate — the essence of few-shot design.
