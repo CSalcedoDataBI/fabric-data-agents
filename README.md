@@ -11,6 +11,7 @@ A Fabric Data Agent turns plain-language questions into governed queries (SQL / 
 This repository dissects each of those parts. Every section follows the same shape — **What it is · Why it matters · How to write it well · Anti-pattern · The Contoso example** — and every part is illustrated end-to-end with one worked example: the **[Contoso Retail Agent](examples/contoso-retail/)**.
 
 > This is not a "getting started" click-through. It is the reference you keep open *while* you author the agent, distilled from real, in-production Data Agent work (sanitized — see [SANITIZATION.md](SANITIZATION.md)).
+> The companion article — field experience, measured questions, and the *why* behind each authoring decision — is at **[Anatomía de un Fabric Data Agent](https://csalcedodatabi.com/blog/anatomia-fabric-data-agent/)**.
 
 ## The anatomy
 
