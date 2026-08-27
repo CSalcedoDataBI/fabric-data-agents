@@ -1,3 +1,9 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg">
+  <img src="docs/assets/banner-light.svg"
+       alt="Anatomy of a Fabric Data Agent: how one actually works, and how to instruct it well. Nine parts, one worked example, MIT.">
+</picture>
+
 [![Lang: English](https://img.shields.io/badge/lang-English-1f6feb?style=for-the-badge)](README.md)
 [![Idioma: Español](https://img.shields.io/badge/idioma-Espa%C3%B1ol-2da44e?style=for-the-badge)](README.es.md)
 &nbsp;·&nbsp; [![License: MIT](https://img.shields.io/badge/license-MIT-black?style=for-the-badge)](LICENSE)
