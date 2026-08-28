@@ -4,6 +4,15 @@
 
 # 08 · Lifecycle & the 2026 sunset
 
+> **Updated 2026-08-27 — this date is now in the past.** The retirement date announced for
+> the Assistants API, 2026-08-26, has passed. This page was written before it and is kept
+> updated on purpose: a reference that names a deadline and then lets it slip by in the
+> future tense is worth less than one that never named it.
+>
+> What is verified here is the calendar. Whether a particular client still receives a
+> response is a thing to check, not to assume — retirements are announced precisely, and
+> executed on their own schedule.
+
 ## What it is
 
 An agent is not shipped once; it is **maintained** — and one of its dependencies has a hard expiry
@@ -15,13 +24,13 @@ date. Two moving parts define its lifecycle:
   which LLM the agent uses — model upgrades apply to both.
 - **The consumption surface**, which is where the deadline lives. Historically, external clients
   consumed a published Data Agent through the **OpenAI Assistants API** (`beta.assistants`,
-  `beta.threads`, `beta.threads.runs`). **OpenAI is retiring the Assistants API on
-  2026-08-26.** Code built on it keeps working until that date and stops after.
+  `beta.threads`, `beta.threads.runs`). **OpenAI announced 2026-08-26 as the
+  retirement date for the Assistants API, and that date has passed.** Code built on it worked up to then; whether a given client still gets an answer today is something to verify.
 
 ## Why it matters — the evergreen advantage
 
 This is the section that dates the fastest, which is exactly why it earns its place in a reference
-meant to be cited: **the deadline is real, dated, and most material ignores it.**
+meant to be cited: **the deadline was real, dated, and most material ignored it — and it has now arrived.** Which is the test of a dated claim: not whether it was right when written, but whether it was updated when the date came.
 
 - **What breaks:** anything consuming a Data Agent through the Assistants-API pattern — the older
   external-client and notebook samples that call `beta.threads.runs`.
@@ -44,9 +53,11 @@ a reference and a blog post that rots.
   gracefully; "Graph is preview" does not.
 - **Choose Standard runtime for production**, Preview only to trial upcoming behavior — and pin which
   you rely on, so a routing change doesn't surprise you.
-- **Audit consumption code for the Assistants API now.** If any client calls `beta.assistants` /
-  `beta.threads`, it has a 2026-08-26 expiry; schedule the migration to MCP / Foundry / Responses
-  ahead of it, not after.
+- **Audit consumption code for the Assistants API today.** If any client still calls
+  `beta.assistants` / `beta.threads`, it is past the 2026-08-26 date: the migration to MCP /
+  Foundry / Responses is overdue rather than planned. Start by confirming what those calls
+  actually return now — "it still works" and "nobody has run it since" look identical from
+  a dashboard.
 - **Re-run your evaluation set after any runtime, model, or migration change** — lifecycle events are
   precisely when silent accuracy regressions appear.
 - **Keep the config in Git** ([07](07-provisioning.md)) so a migration is a reviewable diff with a
