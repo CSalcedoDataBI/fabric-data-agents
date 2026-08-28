@@ -31,7 +31,7 @@ This repository dissects each of those parts. Every section follows the same sha
 | 05 | [Ontology & business glossary](docs/anatomy/05-ontology-and-glossary.md) | Mapping business language to model fields |
 | 06 | [Direct vs. orchestrator](docs/anatomy/06-direct-vs-orchestrator.md) | One agent or many? Evidence from real tests |
 | 07 | [Provisioning](docs/anatomy/07-provisioning.md) | Portal · REST · PowerShell — the automation seam |
-| 08 | [Lifecycle & the 2026 sunset](docs/anatomy/08-lifecycle-and-sunset.md) | The Assistants API shuts down **2026-08-26** — plan your migration |
+| 08 | [Lifecycle & the 2026 sunset](docs/anatomy/08-lifecycle-and-sunset.md) | The Assistants API retirement date, **2026-08-26**, has passed — what to check now |
 
 ## Tooling
 
