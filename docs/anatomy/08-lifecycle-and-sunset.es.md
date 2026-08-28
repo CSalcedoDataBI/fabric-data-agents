@@ -4,6 +4,15 @@
 
 # 08 · Ciclo de vida y la caducidad 2026
 
+> **Actualizado el 2026-08-27 — esta fecha ya pasó.** La fecha de retirada anunciada para la
+> Assistants API, 2026-08-26, quedó atrás. Esta página se escribió antes y se mantiene al
+> día a propósito: una referencia que nombra un plazo y luego lo deja pasar en futuro vale
+> menos que una que nunca lo nombró.
+>
+> Lo verificado aquí es el calendario. Si un cliente concreto sigue recibiendo respuesta es
+> algo que hay que comprobar, no suponer: las retiradas se anuncian con precisión y se
+> ejecutan a su propio ritmo.
+
 ## Qué es
 
 Un agente no se entrega una vez; se **mantiene** — y una de sus dependencias tiene una fecha de
@@ -15,7 +24,7 @@ caducidad dura. Dos piezas móviles definen su ciclo de vida:
   elección de runtime **no** cambia qué LLM usa el agente — las mejoras de modelo aplican a ambos.
 - **La superficie de consumo**, donde vive la fecha límite. Históricamente, los clientes externos
   consumían un Data Agent publicado a través de la **OpenAI Assistants API** (`beta.assistants`,
-  `beta.threads`, `beta.threads.runs`). **OpenAI retira la Assistants API el 2026-08-26.** El código
+  `beta.threads`, `beta.threads.runs`). **OpenAI anunció el 2026-08-26 como fecha de retirada de la Assistants API, y esa fecha ya pasó.** El código
   construido sobre ella sigue funcionando hasta esa fecha y se detiene después.
 
 ## Por qué importa — la ventaja evergreen
@@ -46,7 +55,7 @@ entre una referencia y un post de blog que se pudre.
 - **Elige el runtime Standard para producción**, Preview solo para probar comportamiento por venir — y
   fija de cuál dependes, para que un cambio de ruteo no te sorprenda.
 - **Audita ya el código de consumo buscando la Assistants API.** Si algún cliente llama a
-  `beta.assistants` / `beta.threads`, tiene caducidad 2026-08-26; agenda la migración a MCP / Foundry /
+  `beta.assistants` / `beta.threads`, la fecha del 2026-08-26 quedó atrás: la migración a MCP / Foundry /
   Responses antes de esa fecha, no después.
 - **Re-corre tu conjunto de evaluación tras cualquier cambio de runtime, modelo o migración** — los
   eventos de ciclo de vida son precisamente cuando aparecen las regresiones silenciosas de precisión.
