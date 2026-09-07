@@ -8,7 +8,7 @@ This is a **real, generated retail dataset** — not a described schema. It is *
 this reference: every pattern in [`docs/anatomy/`](../../docs/anatomy/) is illustrated against this
 model, and you can **regenerate it byte-for-byte** and load it into Fabric yourself.
 
-The data is produced by **[Contoso Universe Generator (CUG)](https://github.com/CSalcedoDataBI/contoso-universe-gen)**
+The data is produced by **[Contoso Universe Generator (CUG)](https://github.com/PesanteAnalytics/contoso-universe-gen)**
 — a Python-native synthetic-data tool — which itself stands on the shoulders of **SQLBI's**
 [Contoso Data Generator V2](https://github.com/sql-bi/Contoso-Data-Generator-V2) (Marco Russo &
 Alberto Ferrari). It is **100% synthetic**: Faker-generated names, addresses, and products — no real
@@ -68,7 +68,7 @@ agent — see the anatomy in [`docs/anatomy/`](../../docs/anatomy/00-overview.md
 
 ## Attribution & license
 
-- Data generator: [CUG](https://github.com/CSalcedoDataBI/contoso-universe-gen) — MIT.
+- Data generator: [CUG](https://github.com/PesanteAnalytics/contoso-universe-gen) — MIT.
 - Original Contoso concept & schema realism: [SQLBI Contoso Data Generator V2](https://github.com/sql-bi/Contoso-Data-Generator-V2).
 - See this repo's [SANITIZATION.md](../../SANITIZATION.md): the dataset is synthetic by construction —
   there is no client data to leak.
