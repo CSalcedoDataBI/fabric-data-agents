@@ -8,7 +8,7 @@ Este es un **dataset retail real y generado** — no un esquema descrito. Es *el
 esta referencia: cada patrón de [`docs/anatomy/`](../../docs/anatomy/) se ilustra contra este modelo,
 y puedes **regenerarlo idéntico** y cargarlo en Fabric tú mismo.
 
-Los datos los produce **[Contoso Universe Generator (CUG)](https://github.com/CSalcedoDataBI/contoso-universe-gen)**
+Los datos los produce **[Contoso Universe Generator (CUG)](https://github.com/PesanteAnalytics/contoso-universe-gen)**
 — una herramienta de datos sintéticos nativa de Python — que a su vez se apoya en el
 [Contoso Data Generator V2](https://github.com/sql-bi/Contoso-Data-Generator-V2) de **SQLBI** (Marco
 Russo y Alberto Ferrari). Es **100% sintético**: nombres, direcciones y productos generados por Faker
@@ -70,7 +70,7 @@ de medidas, regla de moneda) se configura en el **Prep-for-AI del modelo**
 
 ## Atribución y licencia
 
-- Generador de datos: [CUG](https://github.com/CSalcedoDataBI/contoso-universe-gen) — MIT.
+- Generador de datos: [CUG](https://github.com/PesanteAnalytics/contoso-universe-gen) — MIT.
 - Concepto Contoso original y realismo del esquema: [SQLBI Contoso Data Generator V2](https://github.com/sql-bi/Contoso-Data-Generator-V2).
 - Ver [SANITIZATION.md](../../SANITIZATION.md) de este repo: el dataset es sintético por construcción —
   no hay datos de cliente que filtrar.
