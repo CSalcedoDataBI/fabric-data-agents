@@ -1,3 +1,9 @@
 # Raw, un-sanitized captures may contain the workspace name / account — never commit them.
 raw/
 *.raw.png
+
+# Microsoft docs images (CC BY 4.0) — local reference/inspiration only; do not commit as-is.
+reference-microsoft/
+
+# Microsoft Fabric official icons — permitted use only, NO modification; never commit as-is.
+official-icons/

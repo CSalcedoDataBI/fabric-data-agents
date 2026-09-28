@@ -5,31 +5,31 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 251
+        "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 718.07902346212222,
-            "y": 592.08996256373507
+            "x": 1208.0790234621222,
+            "y": 0
           },
           "nodeIndex": "DimCurrency",
           "nodeLineageTag": "c7d4a9af-e676-585e-849d-f7479653fb72",
           "size": {
-            "height": 200,
+            "height": 300,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 952.08926038927723,
-            "y": 412.22625662113819
+            "x": 1501.0892603892771,
+            "y": 0
           },
           "nodeIndex": "DimCurrencyExchange",
           "nodeLineageTag": "7a6bebb3-c97f-542a-b4a7-0777072b3648",
           "size": {
-            "height": 176,
+            "height": 285,
             "width": 234
           },
           "zIndex": 0
@@ -49,8 +49,8 @@
         },
         {
           "location": {
-            "x": 718.08926038927711,
-            "y": 95.726965294229558
+            "x": 658.08926038927711,
+            "y": 0
           },
           "nodeIndex": "DimDate",
           "nodeLineageTag": "202c6da8-3b39-57d7-91ad-55d15a545e68",
@@ -62,8 +62,8 @@
         },
         {
           "location": {
-            "x": 285.09665791962482,
-            "y": 650.4525132422765
+            "x": 942.09665791962482,
+            "y": 0.45251324227649548
           },
           "nodeIndex": "DimProduct",
           "nodeLineageTag": "c5d8b15c-8cdb-5f21-aab8-113ae5280c69",
@@ -75,8 +75,8 @@
         },
         {
           "location": {
-            "x": 50,
-            "y": 300.22679749924265
+            "x": 0,
+            "y": 0.22679749924265025
           },
           "nodeIndex": "DimStore",
           "nodeLineageTag": "60755083-e2a1-59ab-87a9-7146898bc97f",
@@ -88,13 +88,26 @@
         },
         {
           "location": {
-            "x": 433.89877506025607,
-            "y": 300.24465989392729
+            "x": 631.89877506025607,
+            "y": 430.24465989392729
           },
           "nodeIndex": "FactSales",
           "nodeLineageTag": "4224e16b-1b5f-5ba3-8637-0227ba7cad3f",
           "size": {
             "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1507.0892603892771,
+            "y": 380.22625662113819
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "f1000000-0000-0000-0000-000000000001",
+          "size": {
+            "height": 388,
             "width": 234
           },
           "zIndex": 0
